@@ -1,9 +1,12 @@
 /* ----------------------------------------- .menu */
 .menu{ // ul
     display : flex;
-    flex-direction: column;
+    flex-direction: row;
     list-style-type: none;
+    
+
     gap : 10px 0;
+
     &__li{ // li
  
        a{ //a

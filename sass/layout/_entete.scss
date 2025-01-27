@@ -2,10 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: beige;
+    
     &__navigation {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-                                                                   
+        flex-direction: row;
+        align-items: center;                                                        
     }
 }
