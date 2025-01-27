@@ -1,10 +1,13 @@
 /* ----------------------------------------- .menu */
 .menu{ // ul
+
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }
     display : flex;
     flex-direction: row;
     list-style-type: none;
     
-
     gap : 10px 0;
 
     &__li{ // li
