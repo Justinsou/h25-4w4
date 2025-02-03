@@ -62,16 +62,23 @@ Les composants
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  gap: 10px 0;
+  padding: 0;
+  gap: 2px;
 }
 @media screen and (max-width: 800px) {
   .menu {
     flex-direction: column;
+    justify-content: center;
+    align-self: center;
   }
+}
+.menu__li {
+  flex: 1 0 auto;
 }
 .menu__li a {
   text-decoration: none;
   padding: 4px;
+  font-size: clamp(0.8rem, 1.3vw, 1rem);
 }
 
 .recherche {
@@ -111,12 +118,13 @@ Les layouts
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(243, 243, 237);
+  background-color: rgb(242, 240, 240);
 }
 .entete__navigation {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 3%;
 }
 @media screen and (max-width: 800px) {
   .entete__navigation {
@@ -128,6 +136,9 @@ Les layouts
     flex-direction: column;
     width: 100vw;
   }
+  .entete__navigation .recherche {
+    display: none;
+  }
 }
 .entete .entete__logo {
   display: flex;
@@ -136,8 +147,8 @@ Les layouts
   margin: 0;
 }
 .entete .entete__logo img {
-  width: 10%;
-  padding: 2%;
+  width: 80px;
+  padding: 10px;
 }
 
 .hero {

@@ -3,18 +3,23 @@
 
     @media screen and (max-width: 800px) {
         flex-direction: column;
+        justify-content: center;
+        align-self: center;
+
     }
     display : flex;
     flex-direction: row;
     list-style-type: none;
-    
-    gap : 10px 0;
+    padding: 0;
+    gap: 2px;
 
     &__li{ // li
- 
+        flex: 1 0 auto;
+
        a{ //a
         text-decoration : none;
         padding : 4px;
+        font-size: clamp(0.8rem, 1.3vw, 1rem);
        } 
     }
 }
