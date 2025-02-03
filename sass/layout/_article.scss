@@ -1,0 +1,41 @@
+article {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  background: white;
+  width: 90%;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3vw;
+  margin-top: -5vw;
+  padding-right: 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1.2vw;
+  font-weight: bold;
+  margin-bottom: 0.5vw;
+  width: 90%;
+}
+
+.form-group input {
+  border: 1px solid #00A3C8;
+  padding: 0.8vw;
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+}
+.form-container #inscription:hover {
+  background: #0083a6;
+  cursor: pointer;
+}

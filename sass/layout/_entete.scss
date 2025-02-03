@@ -7,23 +7,32 @@
     &__navigation {
         @media screen and (max-width: 800px) {
             position: absolute;
-            top: 0;
+            top: 100px;
             right: 0;
-            background-color: white;
-            padding: 20px;
+            background-color: rgb(242, 240, 240);
             flex-direction: column;
+            align-items: center;
+            
             width: 100vw;
+            padding: 0;
+            margin: 0;
+            z-index: 8;
+
+            ul {
+                padding: 5px;
+                margin: 0;
+                align-items: center;
+            }
 
             .recherche {
                 display: none;
             }   
         }
-        
+
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 3%;   
-                                                  
+        gap: 3%;                                          
     }
 
     .entete__logo {
@@ -35,6 +44,17 @@
         img {
             width: 80px;
             padding: 10px;
+            z-index: 10;
+        }
+    }
+
+    .menu__burger{
+        display: none;
+        @media screen and (max-width: 800px) {
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            right: 5px;
         }
     }
 }
