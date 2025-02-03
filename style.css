@@ -85,12 +85,12 @@ Les composants
   text-decoration: none;
   padding: 4px;
   font-size: clamp(0.8rem, 1.3vw, 1rem);
-  color: grey;
+  color: black;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 @media screen and (max-width: 800px) {
   .menu__li a {
-    font-size: clamp(0.8rem, 1.4vw, 1.3rem);
+    font-size: clamp(0.8rem, 1.5vw, 1.3rem);
   }
 }
 
@@ -153,13 +153,16 @@ Les layouts
     z-index: 8;
   }
   .entete__navigation ul {
-    padding: 5px;
+    padding: 10px;
     margin: 0;
     align-items: center;
   }
   .entete__navigation .recherche {
     display: none;
   }
+}
+.entete__navigation .recherche {
+  border: 1px solid black;
 }
 .entete .entete__logo {
   display: flex;

@@ -19,7 +19,7 @@
             z-index: 8;
 
             ul {
-                padding: 5px;
+                padding: 10px;
                 margin: 0;
                 align-items: center;
             }
@@ -32,7 +32,11 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 3%;                                          
+        gap: 3%;  
+
+        .recherche {
+            border: 1px solid black;
+        }                                        
     }
 
     .entete__logo {
