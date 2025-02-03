@@ -111,7 +111,7 @@ Les layouts
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: beige;
+  background-color: rgb(243, 243, 237);
 }
 .entete__navigation {
   display: flex;
@@ -128,6 +128,16 @@ Les layouts
     flex-direction: column;
     width: 100vw;
   }
+}
+.entete .entete__logo {
+  display: flex;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+.entete .entete__logo img {
+  width: 10%;
+  padding: 2%;
 }
 
 .hero {

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: beige;
+    background-color: rgb(243, 243, 237);
 
     &__navigation {
         @media screen and (max-width: 800px) {
@@ -17,5 +17,16 @@
         display: flex;
         flex-direction: row;
         align-items: center;                                                        
+    }
+
+    .entete__logo {
+        display: flex;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        img {
+            width: 10%;
+            padding: 2%;
+        }
     }
 }
