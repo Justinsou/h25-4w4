@@ -1,0 +1,13 @@
+.galerie {
+  article {
+    display: flex;
+    flex-direction: row;
+      .galerie__figure{
+        width: 100%;
+      img{
+        width: 20vw;
+      }
+      }
+    
+  }
+}

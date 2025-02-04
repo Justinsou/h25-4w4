@@ -189,13 +189,11 @@ Les layouts
 
 .galerie article {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 .galerie article .galerie__figure {
-  width: 100%;
-}
-.galerie article .galerie__figure img {
-  width: 20vw;
+  flex: 1 0 auto;
 }
 
 .hero {
