@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  padding-top: 20px;
   article {
     display: flex;
     flex-wrap: wrap; // Ajouté pour permettre le retour à la ligne
     justify-content: space-between; // Ajouté pour espacer les images
     .galerie__figure {
-      width: 24%; // Ajusté pour avoir 4 images par ligne
+      width: 19%; // Ajusté pour avoir 4 images par ligne
       display: flex;
       padding: 0;
       margin: 0 0 1% 0; // Ajouté pour espacer les rangées

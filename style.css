@@ -191,6 +191,7 @@ Les layouts
   display: flex;
   flex-direction: column;
   height: 100vh;
+  padding-top: 20px;
 }
 .galerie article {
   display: flex;
@@ -198,7 +199,7 @@ Les layouts
   justify-content: space-between;
 }
 .galerie article .galerie__figure {
-  width: 24%;
+  width: 19%;
   display: flex;
   padding: 0;
   margin: 0 0 1% 0;
