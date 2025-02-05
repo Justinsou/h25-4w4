@@ -1,13 +1,21 @@
 .galerie {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   article {
     display: flex;
-    flex-direction: row;
-      .galerie__figure{
+    flex-wrap: wrap; // Ajouté pour permettre le retour à la ligne
+    justify-content: space-between; // Ajouté pour espacer les images
+    .galerie__figure {
+      width: 24%; // Ajusté pour avoir 4 images par ligne
+      display: flex;
+      padding: 0;
+      margin: 0 0 1% 0; // Ajouté pour espacer les rangées
+      img {
         width: 100%;
-      img{
-        width: 20vw;
+        height: auto;
+        object-fit: cover;
       }
-      }
-    
+    }
   }
 }
