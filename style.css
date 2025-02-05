@@ -214,6 +214,9 @@ Les layouts
   background-image: url("images/maldives.jpg");
   min-height: 100vh;
 }
+.hero .hero__titre {
+  text-shadow: 2px 2px 2px #0083a6;
+}
 .hero p a {
   text-decoration: none;
   color: black;
