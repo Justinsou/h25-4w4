@@ -57,6 +57,24 @@ p {
 /* /////////////////////////////////
 Les composants
 //////////////////////////////////// */
+.carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carte--grande {
+  flex: 1 1 250px;
+}
+.carte__image img {
+  width: 100%;
+}
+.carte__contenu {
+  background-color: aliceblue;
+}
+.galerie {
+  padding: 0;
+}
+
 /* ----------------------------------------- .menu */
 .menu {
   display: flex;
@@ -99,20 +117,6 @@ Les composants
   padding: 3px;
 }
 
-.carte {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.carte--grande {
-  flex: 1 1 250px;
-}
-.carte__image img {
-  width: 100%;
-}
-.carte__contenu {
-  background-color: aliceblue;
-}
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
@@ -149,6 +153,10 @@ Les layouts
     flex-direction: column;
     width: 100vw;
   }
+}
+.entete .custom-logo {
+  max-width: 150px;
+  height: auto;
 }
 
 .hero {

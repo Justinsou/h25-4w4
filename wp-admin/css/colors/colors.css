@@ -706,6 +706,7 @@ div#wp-responsive-toggle a:before {
 .wp-core-ui.wp-customizer .theme-overlay .theme-header .close:focus, .wp-core-ui.wp-customizer .theme-overlay .theme-header .close:hover, .wp-core-ui.wp-customizer .theme-overlay .theme-header .right:focus, .wp-core-ui.wp-customizer .theme-overlay .theme-header .right:hover, .wp-core-ui.wp-customizer .theme-overlay .theme-header .left:focus, .wp-core-ui.wp-customizer .theme-overlay .theme-header .left:hover {
   border-bottom-color: #e1a948;
   color: #0073aa;
-}/*# sourceMappingURL=colors.css.map */pingURL=colors.css.map */current {
+}/*# sourceMappingURL=colors.css.map */n.current,
+.theme-filter.current {
   border-bottom-color: #04a4cc;
 }/*# sourceMappingURL=colors.css.map */
