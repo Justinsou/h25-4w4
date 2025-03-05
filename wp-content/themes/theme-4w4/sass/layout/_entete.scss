@@ -1,0 +1,71 @@
+/*
+--------------------------------------- Layout de l'entete ----------------------------------------------------
+*/
+
+.entete{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(242, 240, 240);
+
+    &__navigation {
+        @media screen and (max-width: 800px) {
+            position: absolute;
+            top: 100px;
+            right: 0;
+            background-color: rgb(242, 240, 240);
+            flex-direction: column;
+            align-items: center;
+            
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+            z-index: 8;
+
+            ul {
+                padding: 10px;
+                margin: 0;
+                align-items: center;
+            }
+
+            .recherche {
+                display: none;
+            }   
+        }
+        width : auto;
+        position : static;
+        flex-direction: row; 
+        background-color: transparent;
+        display: flex;        
+        align-items: center;
+        
+        text-decoration: none;
+                             
+        .recherche {
+            border: 1px solid black;
+        }                                        
+    }
+
+    .entete__logo {
+        display: flex;
+        width: auto;
+        padding: 0;
+        margin: 0;
+
+        img {
+            width: 80px;
+            padding: 10px;
+            z-index: 10;
+        }
+    }
+
+    .menu__burger{
+        display: none;
+        @media screen and (max-width: 800px) {
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            right: 5px;
+        }
+    }
+}
