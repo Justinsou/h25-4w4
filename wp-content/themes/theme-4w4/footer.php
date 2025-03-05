@@ -20,7 +20,12 @@
             </div>
         </section>
         <section class="piedpage__s2"></section>
-        <section class="piedpage__s3"></section>
+        <section class="piedpage__s3">
+        <?php wp_nav_menu(array(
+                    "menu" => "pricipal",
+                    "container" => "nav",
+                )); ?>
+        </section>
 
 
     </div>
