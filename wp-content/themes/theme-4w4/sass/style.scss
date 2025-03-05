@@ -1,7 +1,7 @@
 /*
-Theme Name: TP1 Justin Soulard
+Theme Name: TP1 Eddy Martin
 Theme URI: https://referenced.ca
-Author: Justin Soulard
+Author: Eddy Martin
 Author URI: https://github.com/eddytuto
 Description: Thème développé dans le cadre du cours 4w4
 Version: 1.0
@@ -30,6 +30,7 @@ Les composants
 //////////////////////////////////// */
 @import "composants/menu";
 @import "composants/recherche";
+@import "composants/carte";
 
 /* /////////////////////////////////
 Les layouts
@@ -38,5 +39,4 @@ Les layouts
 @import "layout/entete";
 @import "layout/galerie";
 @import "layout/hero";
-@import "layout/article";
 @import "layout/footer";

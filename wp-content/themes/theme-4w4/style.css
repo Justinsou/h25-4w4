@@ -3,7 +3,7 @@
 Theme Name: TP1 Justin Soulard
 Theme URI: https://referenced.ca
 Author: Justin Soulard
-Author URI: https://github.com/eddytuto
+Author URI: https://github.com/Justinsou
 Description: Thème développé dans le cadre du cours 4w4
 Version: 1.0
 Requires at least: 6.0
@@ -62,36 +62,16 @@ Les composants
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  padding: 0;
-  gap: 2px;
+  gap: 10px 0;
 }
 @media screen and (max-width: 800px) {
   .menu {
-    display: none;
-  }
-}
-@media screen and (max-width: 800px) {
-  .menu.active {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-self: center;
   }
 }
-.menu__li {
-  flex: 1 0 auto;
-}
-.menu__li a {
+.menu-item a {
   text-decoration: none;
   padding: 4px;
-  font-size: clamp(0.8rem, 1.3vw, 1rem);
-  color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-@media screen and (max-width: 800px) {
-  .menu__li a {
-    font-size: clamp(0.8rem, 1.5vw, 1.3rem);
-  }
 }
 
 .recherche {
@@ -119,25 +99,37 @@ Les composants
   padding: 3px;
 }
 
+.carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carte--grande {
+  flex: 1 1 250px;
+}
+.carte__image img {
+  width: 100%;
+}
+.carte__contenu {
+  background-color: aliceblue;
+}
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */
-/*
---------------------------------------- Layout de global ----------------------------------------------------
-*/
 .global {
   max-width: 1100px;
   padding: 10vh 5vw;
 }
 
-/*
---------------------------------------- Layout de l'entete ----------------------------------------------------
-*/
+.populaire .global {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .entete {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(242, 240, 240);
 }
 .entete__navigation {
   width: auto;
@@ -146,156 +138,23 @@ Les layouts
   background-color: transparent;
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
 @media screen and (max-width: 800px) {
   .entete__navigation {
     position: absolute;
-    top: 100px;
+    top: 0;
     right: 0;
-    background-color: rgb(242, 240, 240);
+    background-color: #fff;
+    padding: 20px;
     flex-direction: column;
-    align-items: center;
     width: 100vw;
-    padding: 0;
-    margin: 0;
-    z-index: 8;
-  }
-  .entete__navigation ul {
-    padding: 10px;
-    margin: 0;
-    align-items: center;
-  }
-  .entete__navigation .recherche {
-    display: none;
-  }
-}
-.entete__navigation .recherche {
-  border: 1px solid black;
-}
-.entete .entete__logo {
-  display: flex;
-  width: auto;
-  padding: 0;
-  margin: 0;
-}
-.entete .entete__logo img {
-  width: 80px;
-  padding: 10px;
-  z-index: 10;
-}
-.entete .menu__burger {
-  display: none;
-}
-@media screen and (max-width: 800px) {
-  .entete .menu__burger {
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    right: 5px;
   }
 }
 
-/*
---------------------------------------- Layout de la galerie ----------------------------------------------------
-*/
-.galerie {
-  display: flex;
-  flex-direction: column;
-  height: 35vh;
-  padding-top: 20px;
-}
-.galerie article {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.galerie article .galerie__figure {
-  width: 19%;
-  display: flex;
-  padding: 0;
-  margin: 0 0 1% 0;
-}
-.galerie article .galerie__figure img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/*
---------------------------------------- Layout de hero ----------------------------------------------------
-*/
 .hero {
   background-image: url("images/maldives.jpg");
+  background-repeat: no-repeat;
   min-height: 100vh;
-}
-.hero .hero__titre {
-  text-shadow: 2px 2px 2px #0083a6;
-}
-.hero p a {
-  text-decoration: none;
-  color: black;
-}
-.hero button {
-  background: #00A3C8;
-  color: white;
-  border: none;
-  padding: 0.8vw 1.1vw;
-  cursor: pointer;
-  border-radius: 4px;
-  align-self: flex-end;
-}
-.hero button:hover {
-  background: #0083a6;
-}
-.hero__icone {
-  padding-top: 20px;
-}
-
-/*
---------------------------------------- Layout de l'article ----------------------------------------------------
-*/
-article {
-  display: flex;
-  justify-content: center;
-}
-
-.form-container {
-  background: white;
-  width: 75%;
-  padding: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 3vw;
-  margin-top: -5vw;
-  padding-right: 40px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-size: 1.2vw;
-  font-weight: bold;
-  margin-bottom: 0.5vw;
-  width: 90%;
-}
-
-.form-group input {
-  border: 1px solid #00A3C8;
-  padding: 0.8vw;
-  border-radius: 4px;
-  outline: none;
-  width: 100%;
-}
-
-.form-container #inscription:hover {
-  background: #0083a6;
-  cursor: pointer;
 }
 
 /*

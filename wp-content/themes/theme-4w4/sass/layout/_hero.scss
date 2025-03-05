@@ -1,34 +1,5 @@
-/*
---------------------------------------- Layout de hero ----------------------------------------------------
-*/
-
 .hero{
     background-image: url("images/maldives.jpg");
+    background-repeat: no-repeat;
     min-height: 100vh;
-
-    .hero__titre {
-        text-shadow: 2px 2px 2px #0083a6;
-        
-    }
-    p {
-        a{
-            text-decoration: none;
-            color: black;
-        }
-    }
-    button {
-        background: #00A3C8;
-        color: white;
-        border: none;
-        padding: 0.8vw 1.1vw;
-        cursor: pointer;
-        border-radius: 4px;
-        align-self: flex-end;
-      }
-    button:hover {
-        background: #0083a6;
-    }
-    &__icone {
-        padding-top: 20px;
-      }
 }
