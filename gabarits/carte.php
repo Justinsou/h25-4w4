@@ -3,9 +3,11 @@
  * Template-part carte
  */
 ?>
-<article class="carte carte--grande">
+<article class="carte carte--grande" style="background-image: url('<?= the_post_thumbnail('medium'); ?>')">
   <figure class="carte__image">
-    <img src="voyage.jpg" alt="Image de voyage">
+    
+    <?php // the_post_thumbnail('thumbnail') ; ?>
+     
     </figure>
   <div class="carte__contenu">
     <?php

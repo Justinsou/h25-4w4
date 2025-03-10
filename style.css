@@ -163,6 +163,8 @@ Les layouts
   background-image: url("images/maldives.jpg");
   background-repeat: no-repeat;
   min-height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
 /*
@@ -180,6 +182,7 @@ footer {
 .piedpage__s1 {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 3rem;
 }
 .piedpage__s1__externe {
@@ -190,8 +193,17 @@ footer {
   flex-direction: column;
 }
 .piedpage__s1__adresse {
-  flex: 0 0 40%;
+  flex: 0 0 35%;
+  padding-bottom: 1rem;
 }
-.piedpage__s1__description {
-  flex: 1 0 400px;
+.piedpage__s1__mission {
+  flex: 0 0 30%;
+}
+.piedpage__s2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.piedpage__s2__icone {
+  align-self: center;
 }/*# sourceMappingURL=style.css.map */

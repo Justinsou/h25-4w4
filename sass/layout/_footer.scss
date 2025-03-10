@@ -13,6 +13,7 @@ footer{
     &__s1{
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         gap: 3rem;
         &__externe {
             flex : 0 0 20%;
@@ -20,16 +21,26 @@ footer{
                 display : flex;
                 flex-direction: column;
             }
-
-
         }
         &__adresse{
-            flex : 0 0 40%;
+            flex : 0 0 35%;
+            padding-bottom: 1rem;
             &__coord{}
             &__recherche{}
         }
-        &__description{
-            flex:1 0 400px;
+        &__mission{
+            flex:0 0 30%;
         }
     }
+    &__s2{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        &__icone{
+            align-self: center;
+        }
+    }
+
+
 }
