@@ -42,10 +42,10 @@
                 <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=000000" width="20" height="20">
             </div>
             <?php wp_nav_menu(array(
-                    "menu" => "pricipal",
-                    "container" => "nav",
-                ));
-            ?>
+                    'menu' => 'principal',
+                    'container' => 'nav',
+                    'container_class' => 'entete__menu'
+                )); ?>
         </section>
     </div>
 </footer>

@@ -166,6 +166,9 @@ Les layouts
   background-size: cover;
   background-position: center;
 }
+.hero__icone {
+  padding-top: 1rem;
+}
 
 /*
   --------------------------------- Layout du pied de page
