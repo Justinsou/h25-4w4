@@ -9,4 +9,14 @@
         
         padding-top: 1rem;
     }
+
+    ul{
+        li {
+            a {
+                list-style: none;
+                // text-decoration: none;
+                color: black;
+            }
+        } 
+    }
 }

@@ -12,6 +12,7 @@
                 <?php wp_nav_menu(array(
                     "menu" => "externe",
                     "container" => "nav",
+                    'container_class' => 'footer__menu__externe'
                 )); ?>
             </div>
             <div class="piedpage__s1__adresse">
@@ -44,7 +45,7 @@
             <?php wp_nav_menu(array(
                     'menu' => 'principal',
                     'container' => 'nav',
-                    'container_class' => 'entete__menu'
+                    'container_class' => 'footer__menu__principal'
                 )); ?>
         </section>
     </div>

@@ -5,6 +5,16 @@
 footer{
   background-color: rgb(236, 136, 13);
   color : #000;
+
+  ul{
+    li {
+        a {
+            list-style: none;
+            text-decoration: none;
+            color: black;
+        }
+    } 
+}
 }
 
 .piedpage{

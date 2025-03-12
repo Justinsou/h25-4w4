@@ -19,8 +19,16 @@
         display: flex;
         align-items: center;
 
-        
-                                                                   
+        ul{
+            li {
+                a {
+                    list-style: none;
+                    text-decoration: none;
+                    color: black;
+                }
+            } 
+        }
+                                            
     }
     .custom-logo {
         max-width: 150px;

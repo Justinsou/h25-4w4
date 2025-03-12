@@ -71,6 +71,12 @@ Les composants
 .carte__contenu {
   background-color: aliceblue;
 }
+.carte ul li a {
+  list-style: none;
+  text-decoration: dotted;
+  color: black;
+}
+
 .galerie {
   padding: 0;
 }
@@ -154,6 +160,11 @@ Les layouts
     width: 100vw;
   }
 }
+.entete__navigation ul li a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
 .entete .custom-logo {
   max-width: 150px;
   height: auto;
@@ -169,6 +180,10 @@ Les layouts
 .hero__icone {
   padding-top: 1rem;
 }
+.hero ul li a {
+  list-style: none;
+  color: black;
+}
 
 /*
   --------------------------------- Layout du pied de page
@@ -176,6 +191,11 @@ Les layouts
 footer {
   background-color: rgb(236, 136, 13);
   color: #000;
+}
+footer ul li a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
 }
 
 .piedpage {
