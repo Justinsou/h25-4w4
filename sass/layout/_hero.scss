@@ -4,6 +4,13 @@
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+
+    @media screen and (max-width: 800px) {
+        padding-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     
     &__icone {
         

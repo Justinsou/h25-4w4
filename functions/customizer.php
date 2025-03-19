@@ -71,7 +71,7 @@ $wp_customize->add_control('footer_adresse', array(
   'type' => 'text',
 ));
 
-//////////////////////////////// ajout de la donné NUMÉRO DE TÉLÉPHONE
+//////////////////////////////// ajout de la donné  DE TÉLÉPHONENUMÉRO
 $wp_customize->add_setting('footer_telephone', array(
   'default' => __('(514) 254-7131', 'theme_4w4'),
   'sanitize_callback' => 'sanitize_text_field'
@@ -80,6 +80,18 @@ $wp_customize->add_setting('footer_telephone', array(
 //////////////////////////////// ajout du controle de la donnée NUMÉRO DE TÉLÉPHONE
 $wp_customize->add_control('footer_telephone', array(
   'label' => __('Téléphone', 'theme_4w4'),
+  'section' => 'footer_section',
+  'type' => 'text',
+));
+//////////////////////////////// ajout de la donné COURRIEL
+$wp_customize->add_setting('footer_courriel', array(
+  'default' => __('Courriel', 'theme_4w4'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+//////////////////////////////// ajout du controle de la donnée COURRIEL
+$wp_customize->add_control('footer_courriel', array(
+  'label' => __('Courriel', 'theme_4w4'),
   'section' => 'footer_section',
   'type' => 'text',
 ));

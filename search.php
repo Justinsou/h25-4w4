@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<main class="site__main">
+<main class="site__main global">
     <section class="recherche__section">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>

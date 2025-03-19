@@ -1,4 +1,4 @@
-    <?php get_header(); ?>
+<?php get_header(); ?>
    <?php 
     $hero_title = get_theme_mod('hero_title', 'Default Title');
     $hero_background = get_theme_mod('hero_background', '');
@@ -6,7 +6,7 @@
     $hero_url_cta = get_theme_mod('hero_cta_link', '');
    ?> 
 
-    <section class="hero" style="background-image: url('<?= $hero_background; ?>')">
+    <section class="hero" style="background-image: url('<?= $hero_background ?>')">
         <div class="hero__contenu global">
             <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
             <p class="hero__description">

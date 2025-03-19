@@ -20,11 +20,15 @@ footer{
 .piedpage{
     display: flex;
     flex-direction: column;
+
+    
     &__s1{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 3rem;
+
+      
         &__externe {
             flex : 0 0 20%;
             & .menu { //ul
@@ -35,6 +39,11 @@ footer{
         &__adresse{
             flex : 0 0 35%;
             padding-bottom: 1rem;
+
+            &__padding{
+                padding-top: 1rem;
+            }
+
             &__coord{}
             &__recherche{}
         }
@@ -46,11 +55,37 @@ footer{
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        padding-top: 1rem;
 
         &__icone{
             align-self: center;
         }
     }
 
+    @media screen and (max-width: 800px) {
+        padding-top: 2vh;
+        
+        &__s1 {
+            gap: 1rem;
+
+            &__mission_texte {
+                align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            }
+        }
+        &__s1, &__s1__adresse, &__s1__mission {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &__s2 {
+            align-items: center;
+            flex-direction: column-reverse;
+            gap: 1rem;
+        }
+    }
 
 }

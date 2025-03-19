@@ -127,8 +127,7 @@ Les composants
 Les layouts
 //////////////////////////////////// */
 .global {
-  max-width: 1100px;
-  padding: 10vh 5vw;
+  padding: 6vh 5vw;
 }
 
 .populaire .global {
@@ -148,6 +147,7 @@ Les layouts
   background-color: transparent;
   display: flex;
   align-items: center;
+  padding-right: 10px;
 }
 @media screen and (max-width: 800px) {
   .entete__navigation {
@@ -176,6 +176,14 @@ Les layouts
   min-height: 100vh;
   background-size: cover;
   background-position: center;
+}
+@media screen and (max-width: 800px) {
+  .hero {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .hero__icone {
   padding-top: 1rem;
@@ -219,6 +227,9 @@ footer ul li a {
   flex: 0 0 35%;
   padding-bottom: 1rem;
 }
+.piedpage__s1__adresse__padding {
+  padding-top: 1rem;
+}
 .piedpage__s1__mission {
   flex: 0 0 30%;
 }
@@ -226,7 +237,33 @@ footer ul li a {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  padding-top: 1rem;
 }
 .piedpage__s2__icone {
   align-self: center;
+}
+@media screen and (max-width: 800px) {
+  .piedpage {
+    padding-top: 2vh;
+  }
+  .piedpage__s1 {
+    gap: 1rem;
+  }
+  .piedpage__s1__mission_texte {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .piedpage__s1, .piedpage__s1__adresse, .piedpage__s1__mission {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .piedpage__s2 {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
 }/*# sourceMappingURL=style.css.map */

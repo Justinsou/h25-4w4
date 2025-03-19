@@ -2,6 +2,7 @@
     <?php 
         $footer_telephone = get_theme_mod('footer_telephone', '(514)');
         $footer_adresse = get_theme_mod('footer_adresse', 'Montréal');
+        $footer_courriel = get_theme_mod('footer_courriel', 'courriel');
         $footer_mission = get_theme_mod('footer_mission', 'Mission');
         $footer_background = get_theme_mod('footer_background', '');
     ?> 
@@ -20,10 +21,13 @@
                 <div class="piedpage__s1__adresse__coord">
                     <?=  $footer_adresse ;?>
                 </div>
-                <div class="piedpage__s1__adresse__telephone">
+                <div class="piedpage__s1__adresse__telephone piedpage__s1__adresse__padding">
                     <?=  $footer_telephone ;?>
                 </div>
-                <div class="piedpage__s1__adresse__recherche">
+                <div class="piedpage__s1__adresse__courriel piedpage__s1__adresse__padding">
+                    <?=  $footer_courriel ;?>
+                </div>
+                <div class="piedpage__s1__adresse__recherche piedpage__s1__adresse__padding">
                     <?php get_search_form();   ?>
                 </div>
             </div>
