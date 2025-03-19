@@ -19,6 +19,18 @@ $wp_customize->add_control('hero_title', array(
     'section' => 'hero_section',
     'type' => 'text',
 ));
+//////////////////////////////// ajout de la donné  DE TÉLÉPHONENUMÉRO
+$wp_customize->add_setting('hero_telephone', array(
+  'default' => __('(514) 254-7131', 'theme_4w4'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+//////////////////////////////// ajout du controle de la donnée NUMÉRO DE TÉLÉPHONE
+$wp_customize->add_control('hero_telephone', array(
+  'label' => __('Téléphones', 'theme_4w4'),
+  'section' => 'hero_section',
+  'type' => 'text',
+));
 //////////////////// ajout image en background HEROOOOO
 $wp_customize->add_setting('hero_background', array(
   'default' => '',

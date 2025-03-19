@@ -32,8 +32,17 @@
         }
                                             
     }
+    &__logo {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        left: -25px;
+        @media screen and (max-width: 800px) {
+            order: 10;
+        }
+    }
     .custom-logo {
-        max-width: 150px;
+        max-width: 85px;
         height: auto;
         }
     }

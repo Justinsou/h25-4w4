@@ -1,3 +1,11 @@
+<?php   
+    $hero_title = get_theme_mod('hero_title', 'Default Title');
+    $hero_background = get_theme_mod('hero_background', '');
+    $hero_telephone = get_theme_mod('hero_telephone', '(514)');
+    $hero_button_cta = get_theme_mod('hero_cta_text', '');
+    $hero_url_cta = get_theme_mod('hero_cta_link', '');
+?>
+
 <section class="hero" style="background-image: url('<?= $hero_background ?>')">
         <div class="hero__contenu global">
             <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
@@ -6,6 +14,9 @@
             </p>
             <p class="hero__courriel">
             <?php bloginfo('admin_email'); ?>
+            </p>
+            <p class="hero__telephone">
+            <?php $hero_telephone; ?>
             </p>
             <p class="hero__adresse">
                 5800 Sherbrooke-est - Montréal (Québec) H1X 2A2
