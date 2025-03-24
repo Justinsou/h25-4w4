@@ -63,7 +63,7 @@ Les composants
   justify-content: space-between;
 }
 .carte--grande {
-  flex: 1 1 250px;
+  flex: 1 1 30%;
 }
 .carte__image img {
   width: 100%;
@@ -169,7 +169,6 @@ Les layouts
   margin: 0;
   padding: 0;
   position: relative;
-  left: -25px;
 }
 @media screen and (max-width: 800px) {
   .entete__logo {
