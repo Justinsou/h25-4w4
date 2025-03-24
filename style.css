@@ -123,6 +123,52 @@ Les composants
   padding: 3px;
 }
 
+.erreur_barre {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.erreur_404 {
+  text-align: center;
+  margin: 50px auto;
+  font-family: "Georgia", serif;
+  color: #2e7d32;
+}
+.erreur_404 h1 {
+  font-size: 48px;
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+.erreur_404 h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #6d4c41;
+}
+.erreur_404 .bouton_acceuil {
+  margin-top: 20px;
+}
+.erreur_404 .bouton_acceuil a {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.erreur_404 .bouton_acceuil a:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */

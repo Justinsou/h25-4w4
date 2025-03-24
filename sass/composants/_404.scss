@@ -1,0 +1,51 @@
+// Barre d'erreur
+.erreur_barre {
+  background-color: #4caf50; // Vert naturel
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+// Section principale de la page 404
+.erreur_404 {
+  text-align: center;
+  margin: 50px auto;
+  font-family: 'Georgia', serif; // Police plus élégante pour un thème nature
+  color: #2e7d32; // Vert foncé
+
+  h1 {
+    font-size: 48px;
+    color: #4caf50; // Vert naturel
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #6d4c41; // Marron pour un ton terreux
+  }
+
+  .bouton_acceuil {
+    margin-top: 20px;
+
+    a {
+      display: inline-block;
+      background-color: #4caf50; // Vert naturel
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: 'Arial', sans-serif;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: #388e3c; // Vert plus foncé au survol
+        transform: scale(1.05); // Légère mise en avant au survol
+      }
+    }
+  }
+}
