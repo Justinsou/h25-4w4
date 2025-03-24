@@ -1,10 +1,17 @@
-    <?php get_header(); ?>
+<?php get_header(); ?>
 
-    <section class="erreur 404">
-        <h1>ERREUR 404</h1>
-        home url
-    </section>
-    <?php get_footer(); ?>
-   
+<main>
+  <p class="erreur_barre erreur_barre_haut ">//////////////////////////////////////////////////////////////////////////////////////////</p>
+  <section class="erreur_404">
+    <h1>Erreur 404</h1>
+    <h3>La page que vous cherchez n'existe pas.</h3>
+    <p class="bouton_acceuil">
+      <a href="<?php echo home_url(); ?>">Revenir à l'accueil</a> <!-- Bouton avec lien vers l'accueil -->
+    </p>
+  </section>
+  <p class="erreur_barre erreur_barre_bas">//////////////////////////////////////////////////////////////////////////////////////////</p>
+</main>
+
+<?php get_footer(); ?>
 </body>
 </html>
