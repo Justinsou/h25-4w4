@@ -9,6 +9,7 @@
   letter-spacing: 2px;
   margin: 0;
 }
+
 // Section principale de la page 404
 .erreur_404 {
   text-align: center;
@@ -48,4 +49,12 @@
       }
     }
   }
+}
+
+// Ajout d'un fond pour refléter la nature
+body.error404 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #2e7d32; // Texte par défaut en vert foncé
 }

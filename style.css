@@ -169,6 +169,13 @@ Les composants
   transform: scale(1.05);
 }
 
+body.error404 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #2e7d32;
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */

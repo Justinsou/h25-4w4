@@ -130,6 +130,21 @@ $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer
 'label' => __('footer Background Image', 'theme_4w4'),
 'section' => 'footer_section',
 )));
+
+// /////////////////////////////////////// pour le EREUR 404 ///////////////////////////////////////////
+$wp_customize->add_section('erreur_404_section', array(
+  'title' => __('Section 404', 'theme_4w4'),
+  'priority' => 30,
+));
+$wp_customize->add_setting('erreur_404_background', array(
+  'default' => '',
+  'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_404_background', array(
+  'label' => __('Erreur 404 Background Image', 'theme_4w4'),
+  'section' => 'erreur_404_section',
+)));
 }
 
 add_action('customize_register', 'theme_4w4_customize_register');
