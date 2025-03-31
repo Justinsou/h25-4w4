@@ -193,6 +193,14 @@ Les layouts
   justify-content: space-between;
   align-items: center;
 }
+.entete .material-symbols-outlined {
+  display: none;
+}
+@media screen and (max-width: 524px) {
+  .entete .material-symbols-outlined {
+    display: flex;
+  }
+}
 .entete__navigation {
   width: auto;
   position: static;
@@ -202,28 +210,37 @@ Les layouts
   align-items: center;
   padding-right: 10px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 524px) {
   .entete__navigation {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-    padding: 20px;
-    flex-direction: column;
-    width: 100vw;
+    display: none;
   }
+}
+@media screen and (max-width: 1000px) {
+  .entete__navigation {
+    flex-direction: column;
+  }
+}
+.entete__navigation ul {
+  display: flex;
+  flex-direction: row;
 }
 .entete__navigation ul li a {
   list-style: none;
   text-decoration: none;
   color: black;
 }
+.entete__navigation .recherche {
+  display: flex;
+}
+.entete__navigation .material-symbols-outlined {
+  display: flex;
+}
 .entete__logo {
   margin: 0;
   padding: 0;
   position: relative;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 524px) {
   .entete__logo {
     order: 10;
   }
@@ -240,7 +257,7 @@ Les layouts
   background-size: cover;
   background-position: center;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 524px) {
   .hero {
     padding-top: 1.5rem;
     display: flex;
@@ -305,7 +322,7 @@ footer ul li a {
 .piedpage__s2__icone {
   align-self: center;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 524px) {
   .piedpage {
     padding-top: 2vh;
   }

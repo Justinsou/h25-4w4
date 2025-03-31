@@ -132,18 +132,46 @@ $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer
 )));
 
 // /////////////////////////////////////// pour le EREUR 404 ///////////////////////////////////////////
-$wp_customize->add_section('erreur_404_section', array(
+$wp_customize->add_section('404_section', array(
   'title' => __('Section 404', 'theme_4w4'),
   'priority' => 30,
 ));
+
+//////////////////////////////// ajout text description 404
+$wp_customize->add_setting('Texte_404', array(
+  'default' => __('', 'theme_4w4'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+//////////////////////////////// ajout de la donné du text description 404
+$wp_customize->add_control('Texte_404', array(
+  'label' => __('Desciption', 'theme_4w4'),
+  'section' => '404_section',
+  'type' => 'text',
+));
+
+//////////////////////////////// ajout text du bouton 404
+$wp_customize->add_setting('Bouton_404', array(
+  'default' => __('', 'theme_4w4'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+//////////////////////////////// ajout de la donné du text du bouton 404
+$wp_customize->add_control('Bouton_404', array(
+  'label' => __('Bouton', 'theme_4w4'),
+  'section' => '404_section',
+  'type' => 'text',
+));
+
+//////////////////// ajout image en background 404
 $wp_customize->add_setting('erreur_404_background', array(
   'default' => '',
   'sanitize_callback' => 'esc_url_raw',
 ));
-
+//////////////////// ajout image en background 404
 $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_404_background', array(
   'label' => __('Erreur 404 Background Image', 'theme_4w4'),
-  'section' => 'erreur_404_section',
+  'section' => '404_section',
 )));
 }
 

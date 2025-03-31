@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Club de voyage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
     <!-- link rel="stylesheet" href="normalize.css" -->
     <!-- link rel="stylesheet" href="style.css" -->
     <?php wp_head() ?>
@@ -12,6 +13,7 @@
     <header>
         <div class="entete">
             <figure class="entete__logo">
+            
             <?php
             if (function_exists('the_custom_logo')) {
                 the_custom_logo();
@@ -25,7 +27,11 @@
                     'container_class' => 'entete__menu'
                 )); ?>
                 <?php get_search_form() ?>
-
+              
             </div> <!-- fin entete__navigation  -->
+            
+            <span class="material-symbols-outlined">
+                menu
+                </span>
         </div>
     </header>
