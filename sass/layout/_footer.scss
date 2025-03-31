@@ -30,10 +30,15 @@ footer{
 
       
         &__externe {
+            nav {
+                display: flex;
+                align-items: center;
+            }
             flex : 0 0 20%;
             & .menu { //ul
                 display : flex;
                 flex-direction: column;
+                align-items: center;
             }
         }
         &__adresse{
@@ -62,7 +67,7 @@ footer{
         }
     }
 
-    @media screen and (max-width: 524px) {
+    @media screen and (max-width: 800px) {
         padding-top: 2vh;
         
         &__s1 {

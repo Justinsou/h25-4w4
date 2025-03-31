@@ -159,8 +159,9 @@ Les composants
   margin-bottom: 30px;
   color: #4caf50;
 }
-.erreur_404 .encadrer .li {
-  display: inline-block;
+.erreur_404 .encadrer #menu-principal-1 > li.menu-item.menu-item-type-taxonomy.menu-item-object-category > a {
+  display: flex;
+  margin-left: 1rem;
   background-color: #4caf50;
   color: white;
   text-decoration: none;
@@ -170,7 +171,7 @@ Les composants
   font-family: "Montserrat", sans-serif;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.erreur_404 .encadrer .li:hover {
+.erreur_404 .encadrer #menu-principal-1 > li.menu-item.menu-item-type-taxonomy.menu-item-object-category > a:hover {
   background-color: #388e3c;
   transform: scale(1.05);
 }
@@ -317,9 +318,14 @@ footer ul li a {
 .piedpage__s1__externe {
   flex: 0 0 20%;
 }
+.piedpage__s1__externe nav {
+  display: flex;
+  align-items: center;
+}
 .piedpage__s1__externe .menu {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .piedpage__s1__adresse {
   flex: 0 0 35%;
@@ -340,7 +346,7 @@ footer ul li a {
 .piedpage__s2__icone {
   align-self: center;
 }
-@media screen and (max-width: 524px) {
+@media screen and (max-width: 800px) {
   .piedpage {
     padding-top: 2vh;
   }
