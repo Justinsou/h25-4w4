@@ -123,37 +123,41 @@ Les composants
   padding: 3px;
 }
 
-.erreur_barre {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-family: "Arial", sans-serif;
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
 .erreur_404 {
+  min-height: 60vh;
   text-align: center;
   margin: 50px auto;
-  font-family: "Georgia", serif;
+  font-family: "Montserrat", sans-serif;
   color: #2e7d32;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.erreur_404 h1 {
-  font-size: 48px;
+.erreur_404 .encadrer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+.erreur_404 .encadrer .titre {
+  background-color: rgba(255, 255, 255, 0.718);
+}
+.erreur_404 .encadrer .titre h1 {
+  font-size: 3rem;
   color: #4caf50;
   margin-bottom: 20px;
 }
-.erreur_404 h3 {
-  font-size: 24px;
+.erreur_404 .encadrer .texte p {
+  font-size: 1rem;
   margin-bottom: 30px;
-  color: #6d4c41;
+  color: #4caf50;
 }
-.erreur_404 .bouton_acceuil {
+.erreur_404 .encadrer .bouton_acceuil {
   margin-top: 20px;
 }
-.erreur_404 .bouton_acceuil a {
+.erreur_404 .encadrer .bouton_acceuil a {
   display: inline-block;
   background-color: #4caf50;
   color: white;
@@ -161,19 +165,12 @@ Les composants
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
-  font-family: "Arial", sans-serif;
+  font-family: "Montserrat", sans-serif;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.erreur_404 .bouton_acceuil a:hover {
+.erreur_404 .encadrer .bouton_acceuil a:hover {
   background-color: #388e3c;
   transform: scale(1.05);
-}
-
-body.error404 {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #2e7d32;
 }
 
 /* /////////////////////////////////

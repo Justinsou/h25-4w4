@@ -136,6 +136,18 @@ $wp_customize->add_section('404_section', array(
   'title' => __('Section 404', 'theme_4w4'),
   'priority' => 30,
 ));
+//////////////////////////////// ajout titre description 404
+$wp_customize->add_setting('Titre_404', array(
+  'default' => __('', 'theme_4w4'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+//////////////////////////////// ajout de la donné du titre description 404
+$wp_customize->add_control('Titre_404', array(
+  'label' => __('Titre', 'theme_4w4'),
+  'section' => '404_section',
+  'type' => 'text',
+));
 
 //////////////////////////////// ajout text description 404
 $wp_customize->add_setting('Texte_404', array(
