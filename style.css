@@ -159,6 +159,21 @@ Les composants
   margin-bottom: 30px;
   color: #4caf50;
 }
+.erreur_404 .encadrer .li {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.erreur_404 .encadrer .li:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
 .erreur_404 .encadrer .bouton_acceuil {
   margin-top: 20px;
   gap: 1rem;

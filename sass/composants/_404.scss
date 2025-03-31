@@ -41,7 +41,21 @@
     }
 
     .li {
-      
+      display: inline-block;
+        background-color: #4caf50; // Vert naturel
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: "Montserrat", sans-serif;
+  
+        transition: background-color 0.3s ease, transform 0.2s ease;
+  
+        &:hover {
+          background-color: #388e3c; // Vert plus foncé au survol
+          transform: scale(1.05); // Légère mise en avant au survol
+        }
     }
     
     .bouton_acceuil {
