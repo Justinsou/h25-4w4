@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 <?php 
     $erreur_404_background = get_theme_mod('erreur_404_background', '');
-
     $Titre_404 = get_theme_mod('Titre_404', '');
     $Texte_404 = get_theme_mod('Texte_404', '');
     $Bouton_404 = get_theme_mod('Bouton_404', '');
@@ -20,7 +19,7 @@
                 <?php wp_nav_menu(array(
                     'menu' => 'erreur_404',
                     'container' => 'nav',
-                    'container_class' => 'entete__menu'
+                    'container_class' => 'erreur404__menu'
                 )); ?>
             </div> 
     </div>
