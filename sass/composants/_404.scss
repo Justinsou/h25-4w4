@@ -3,13 +3,13 @@
 .erreur_404 {
   min-height: 60vh;
   text-align: center;
-  margin: 50px auto;
   font-family: "Montserrat", sans-serif;
   color: #2e7d32; // Vert foncé
   display: flex;
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: cover;
   
   .encadrer {
     display: flex;
@@ -21,14 +21,17 @@
 
     .titre {
       background-color: rgba(255, 255, 255, 0.718); // Couleur légèrement différente pour le titre
+      margin-top: 1rem;
       h1 {
-        font-size: 3rem;
+        font-size: 4rem;
         color: #4caf50; // Vert naturel
         margin-bottom: 20px;
       }
     }
    
     .texte {
+      background-color: rgba(255, 255, 255, 0.718); // Couleur légèrement différente pour le titre
+      margin-top: 1rem;
       p {
         font-size: 1rem;
         margin-bottom: 30px;
@@ -36,9 +39,14 @@
       }
     
     }
+
+    .li {
+      
+    }
     
     .bouton_acceuil {
       margin-top: 20px;
+      gap: 1rem;
   
       a {
         display: inline-block;

@@ -126,13 +126,13 @@ Les composants
 .erreur_404 {
   min-height: 60vh;
   text-align: center;
-  margin: 50px auto;
   font-family: "Montserrat", sans-serif;
   color: #2e7d32;
   display: flex;
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: cover;
 }
 .erreur_404 .encadrer {
   display: flex;
@@ -143,11 +143,16 @@ Les composants
 }
 .erreur_404 .encadrer .titre {
   background-color: rgba(255, 255, 255, 0.718);
+  margin-top: 1rem;
 }
 .erreur_404 .encadrer .titre h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   color: #4caf50;
   margin-bottom: 20px;
+}
+.erreur_404 .encadrer .texte {
+  background-color: rgba(255, 255, 255, 0.718);
+  margin-top: 1rem;
 }
 .erreur_404 .encadrer .texte p {
   font-size: 1rem;
@@ -156,6 +161,7 @@ Les composants
 }
 .erreur_404 .encadrer .bouton_acceuil {
   margin-top: 20px;
+  gap: 1rem;
 }
 .erreur_404 .encadrer .bouton_acceuil a {
   display: inline-block;
