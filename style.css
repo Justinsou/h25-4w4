@@ -159,7 +159,7 @@ Les composants
   margin-bottom: 30px;
   color: #4caf50;
 }
-.erreur_404 .encadrer #menu-principal-1 > li.menu-item.menu-item-type-taxonomy.menu-item-object-category > a {
+.erreur_404 .encadrer .menu ul li a {
   display: flex;
   margin-left: 1rem;
   background-color: #4caf50;
@@ -171,7 +171,7 @@ Les composants
   font-family: "Montserrat", sans-serif;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.erreur_404 .encadrer #menu-principal-1 > li.menu-item.menu-item-type-taxonomy.menu-item-object-category > a:hover {
+.erreur_404 .encadrer .menu ul li a:hover {
   background-color: #388e3c;
   transform: scale(1.05);
 }
@@ -193,6 +193,36 @@ Les composants
 .erreur_404 .encadrer .bouton_acceuil a:hover {
   background-color: #388e3c;
   transform: scale(1.05);
+}
+
+/**
+_boutons-categories.scss ------------------------------------  .categorie__ul
+*/
+.categorie__ul {
+  display: flex;
+  gap: 5px;
+  list-style-type: none;
+}
+.categorie__ul__li {
+  padding: 3px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.categorie__ul__li:hover {
+  background-color: #007BFF;
+  color: #fff;
+  transform: scale(1.05);
+}
+.categorie__ul__li:active {
+  transform: scale(0.95);
+}
+.categorie__ul__li__a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* /////////////////////////////////
