@@ -230,6 +230,39 @@ _boutons-categories.scss ------------------------------------  .categorie__ul
   color: inherit;
 }
 
+.destination {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  padding-left: 1rem;
+}
+.destination div {
+  color: #000000;
+}
+.destination .destination__titre {
+  display: flex;
+  justify-content: center;
+}
+.destination .destination__list h3 {
+  padding-left: 1.5rem;
+}
+.destination .destination__list a {
+  padding-left: 2rem;
+  text-decoration: none;
+  color: inherit;
+  list-style-type: none;
+  padding: 0.25rem;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.destination .destination__list a:hover {
+  background-color: #007BFF;
+  color: #fff;
+  transform: scale(1.05);
+}
+.destination .destination__list a:active {
+  transform: scale(0.95);
+  border: 1px solid black;
+}
+
 /* /////////////////////////////////
 Les layouts
 //////////////////////////////////// */

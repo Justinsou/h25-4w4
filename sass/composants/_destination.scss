@@ -1,0 +1,40 @@
+.destination {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  padding-left: 1rem;
+
+ // Ajouter une bordure en bas à tous les enfants
+div {
+  // border-bottom: 1px dashed #007BFF; // Bordure bleue
+  color: #000000;
+}
+
+  .destination__titre {
+    display: flex;
+    justify-content: center;
+  }
+
+  .destination__list{
+   
+    h3 {
+      padding-left: 1.5rem;
+    }
+    a {
+      padding-left: 2rem;
+      text-decoration: none;
+      color: inherit; // Utilise la couleur héritée du parent
+      list-style-type: none;
+      padding: 0.25rem;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      &:hover {
+        background-color: #007BFF; // Bleu
+        color: #fff;
+        transform: scale(1.05); // Légère mise en avant
+      }
+      &:active {
+        transform: scale(0.95); // Effet de clic
+        border:1px solid black;
+      }
+    }
+  }
+}

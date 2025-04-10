@@ -10,6 +10,7 @@ function categories_liste($parent_slug) {
     // Vérifier si la catégorie parente existe
     if ($parent_category) {
         $parent_id = $parent_category->term_id;
+        
 
         // Récupérer les sous-catégories de la catégorie parente
         $sous_categories = get_categories(array(
