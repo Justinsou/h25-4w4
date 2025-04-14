@@ -31,16 +31,20 @@ $wp_customize->add_control('hero_telephone', array(
   'section' => 'hero_section',
   'type' => 'text',
 ));
-//////////////////// ajout image en background HEROOOOO
-$wp_customize->add_setting('hero_background', array(
-  'default' => '',
-  'sanitize_callback' => 'esc_url_raw',
-));
-
-$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
-  'label' => __('Hero Background Image', 'theme_4w4'),
-  'section' => 'hero_section',
-)));
+/////////////// ajout de la données image en background
+for($k = 0; $k<3; $k++){
+  $wp_customize->add_setting('hero_background'.$k , array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+   
+  //////////// ajout du contrôle de la donnée background
+   
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background'.$k , array(
+    'label' => __('Image en arrière plan', 'theme_4w4'),
+    'section' => 'hero_section',
+  )));
+  }
 /////////////////// ajout bouton call to action 
 $wp_customize->add_setting('hero_cta_text', array(
   'default' => __('Learn More', 'theme_4w4'),

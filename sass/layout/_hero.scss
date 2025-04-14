@@ -1,29 +1,73 @@
-.hero{
+.hero {
     background-image: url("images/maldives.jpg");
     background-repeat: no-repeat;
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
+
+    &__carrousel {
+        position: absolute;
+        min-height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        display: none; // Par défaut, toutes les images sont masquées
+        &.active {
+            display: block; // Affiche uniquement l'image active
+        }
+    }
+
+    &__radio {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 1rem;
+        width: 100%;
+        z-index: 1;
+        gap: 1rem;
+        padding: 0.5rem;
+        border-radius: 1.5rem;
+
+        .hero__radio__input {
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            background-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+            &:checked {
+                background-color: #fff;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &__icone {
+        padding-top: 1rem;
+        display: flex;
+        gap: 0.5rem;
+
+        img {
+            width: 25px;
+            height: 25px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
 
     @media screen and (max-width: 524px) {
         padding-top: 1.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    
-    &__icone {
-        
-        padding-top: 1rem;
-    }
 
-    ul{
-        li {
-            a {
-                list-style: none;
-                // text-decoration: none;
-                color: black;
-            }
-        } 
+        &__radio {
+            bottom: 0.5rem;
+        }
     }
 }

@@ -341,8 +341,56 @@ Les layouts
   background-image: url("images/maldives.jpg");
   background-repeat: no-repeat;
   min-height: 100vh;
+}
+.hero__carrousel {
+  position: absolute;
+  min-height: 100vh;
+  width: 100%;
   background-size: cover;
   background-position: center;
+  z-index: -1;
+  display: none;
+}
+.hero__carrousel.active {
+  display: block;
+}
+.hero__radio {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  z-index: 1;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+}
+.hero__radio .hero__radio__input {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.hero__radio .hero__radio__input:checked {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+.hero__icone {
+  padding-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.hero__icone img {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+.hero__icone img:hover {
+  transform: scale(1.2);
 }
 @media screen and (max-width: 524px) {
   .hero {
@@ -351,13 +399,9 @@ Les layouts
     justify-content: center;
     align-items: center;
   }
-}
-.hero__icone {
-  padding-top: 1rem;
-}
-.hero ul li a {
-  list-style: none;
-  color: black;
+  .hero__radio {
+    bottom: 0.5rem;
+  }
 }
 
 /*
