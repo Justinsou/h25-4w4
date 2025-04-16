@@ -5,6 +5,7 @@
   const heroCarrousels = document.querySelectorAll(".hero__carrousel");
   let currentIndex = 0;
 
+
   // Fonction pour afficher l'image correspondant au bouton radio sélectionné
   function updateCarrousel(index) {
     heroCarrousels.forEach((carrousel, i) => {

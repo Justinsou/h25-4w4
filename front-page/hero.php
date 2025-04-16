@@ -1,23 +1,32 @@
 <?php   
     $hero_title = get_theme_mod('hero_title', 'Default Title');
-    $hero_background = get_theme_mod('hero_background', '');
     $hero_telephone = get_theme_mod('hero_telephone', '(514)');
     $hero_button_cta = get_theme_mod('hero_cta_text', '');
     $hero_url_cta = get_theme_mod('hero_cta_link', '');
+
+    // Récupérer les images du carrousel
+    $hero_backgrounds = [];
+    for ($i = 0; $i < 3; $i++) {
+        $hero_backgrounds[] = get_theme_mod('hero_background' . $i, '');
+    }
 ?>
 
 <section class="hero">
-<!-- style="background-image: url('')" -->
-      <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[0] ?>)"></div>
-      <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[1] ?>)"></div>
-      <div class="hero__carrousel" style="background-image: url(<?php echo $hero_background[2] ?>)"></div>
-    
-      <div class="hero__radio">
-        <input class="hero__radio__input" data-id-radio="0" type="radio" name="carrousel" checked="checked">
-        <input class="hero__radio__input" data-id-radio="1" type="radio" name="carrousel">
-        <input class="hero__radio__input" data-id-radio="2" type="radio" name="carroussel">
-      </div>
+    <!-- Carrousel des images -->
+    <?php foreach ($hero_backgrounds as $index => $background): ?>
+        <?php if (!empty($background)): ?>
+            <div class="hero__carrousel" style="background-image: url('<?php echo esc_url($background); ?>')"></div>
+        <?php endif; ?>
+    <?php endforeach; ?>
 
+    <!-- Boutons radio pour naviguer dans le carrousel -->
+    <div class="hero__radio">
+        <?php foreach ($hero_backgrounds as $index => $background): ?>
+            <?php if (!empty($background)): ?>
+                <input class="hero__radio__input" data-id-radio="<?php echo $index; ?>" type="radio" name="carrousel" <?php echo $index === 0 ? 'checked="checked"' : ''; ?>>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
 
         <div class="hero__contenu global">
             <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
