@@ -1,196 +1,262 @@
-<?php
+<?php   
+    function theme_4w4_customize_register($wp_customize) {
+        // Le code pour ajouter des sections, des réglages et des contrôles ira ici.
+        // Création d'un nouvelle section dans le customizer
+      
+        // Début de la zone hero
+        $wp_customize->add_section('hero_section', array(
+          'title' => __('Section Hero', 'theme_4w4'),
+          'priority' => 30,
+      ));
+      ///////////////// ajout de la donnée
+      $wp_customize->add_setting('hero_auteur', array(
+        'default' => __('Erik Perez', 'theme_4w4'),
+        'sanitize_callback' => 'sanitize_text_field'
+      ));
+      
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control('hero_auteur', array(
+        'label' => __('Auteur', 'theme_4w4'),
+        'section' => 'hero_section',
+        'type' => 'text',
+      ));
+      // Nombre d'images dans le carrousel
+      // $wp_customize->add_setting('hero_nombre_images', array(
+      //   'default' => 3,
+      //   'sanitize_callback' => 'absint', // pour sécuriser un entier
+      // ));
 
-function theme_4w4_customize_register($wp_customize) {
-  // Le code pour ajouter des sections, des réglages et des contrôles ira ici.
-  // Cre2ation d'une nouvelle section dans le customizer
-  $wp_customize->add_section('hero_section', array(
-    'title' => __('Section Hero', 'theme_4w4'),
-    'priority' => 30,
-  ));
-//////////////////////////////// ajout de la donné
-$wp_customize->add_setting('hero_title', array(
-    'default' => __('Justin Soulard', 'theme_4w4'),
-    'sanitize_callback' => 'sanitize_text_field'
-));
+      // $wp_customize->add_control('hero_nombre_images', array(
+      //   'label' => __('Nombre d\'images pour le carrousel', 'theme_4w4'),
+      //   'section' => 'hero_section',
+      //   'type' => 'number',
+      //   'input_attrs' => array(
+      //     'min' => 1,
+      //     'max' => 10 // Tu peux choisir la limite que tu veux
+      //   )
+      // ));
+      // for($k = 0; $k<3; $k++){
+      //   /////////////////Début du champ background
+      //   //////////////// ajout de la donnée image en background
+      //   $wp_customize->add_setting('hero_background_' . $k, array(
+      //     'default' => '',
+      //     'sanitize_callback' => 'esc_url_raw',
+      //   ));
+      //   ///////////////// ajout du contrôle de la donnée
+      //   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_' . $k, array(
+      //     'label' => __('Image en arrière plan' . ($k+1), 'theme_4w4'),
+      //     'section' => 'hero_section',
+      //   )));
+      // }
+      
 
-//////////////////////////////// ajout du controle de la donnée
-$wp_customize->add_control('hero_title', array(
-    'label' => __('Auteur', 'theme_4w4'),
-    'section' => 'hero_section',
-    'type' => 'text',
-));
-//////////////////////////////// ajout de la donné  DE TÉLÉPHONENUMÉRO
-$wp_customize->add_setting('hero_telephone', array(
-  'default' => __('(514) 254-7131', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field'
-));
+       /////////////////Début du champ couleur
+      //////////////// ajout de la donnée couleur 
+      $wp_customize->add_setting('hero_couleur', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ));
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_couleur', array(
+        'label' => __('Sélectionner une couleur', 'theme_4w4'),
+        'section' => 'hero_section',
+      )));
 
-//////////////////////////////// ajout du controle de la donnée NUMÉRO DE TÉLÉPHONE
-$wp_customize->add_control('hero_telephone', array(
-  'label' => __('Téléphones', 'theme_4w4'),
-  'section' => 'hero_section',
-  'type' => 'text',
-));
-/////////////// ajout de la données image en background
-for($k = 0; $k<3; $k++){
-  $wp_customize->add_setting('hero_background'.$k , array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  ));
-   
-  //////////// ajout du contrôle de la donnée background
-   
-  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background'.$k , array(
-    'label' => __('Image en arrière plan', 'theme_4w4'),
-    'section' => 'hero_section',
-  )));
-  }
-/////////////////// ajout bouton call to action 
-$wp_customize->add_setting('hero_cta_text', array(
-  'default' => __('Learn More', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field',
-));
-$wp_customize->add_control('hero_cta_text', array(
-  'label' => __('CTA Button Text', 'theme_4w4'),
-  'section' => 'hero_section',
-  'type' => 'text',
-));
-/////////////////// ajout url call to action 
-$wp_customize->add_setting('hero_cta_link', array(
-  'default' => '#',
-  'sanitize_callback' => 'esc_url_raw',
-));
-$wp_customize->add_control('hero_cta_link', array(
-  'label' => __('CTA Button Link', 'theme_4w4'),
-  'section' => 'hero_section',
-  'type' => 'url',
-));
+      // ========== Ajout du champ Nombre d'images ==========
+      $wp_customize->add_setting('hero_nombre_images', array(
+        'default' => 3,
+        'sanitize_callback' => 'absint',
+      ));
 
-//
-//////////////////////////////////////////  Pour le foooter ////////////////////////////////////////////////////////
-//
-$wp_customize->add_section('footer_section', array(
-  'title' => __('Section footer', 'theme_4w4'),
-  'priority' => 30,
-));
+      $wp_customize->add_control('hero_nombre_images', array(
+        'label' => __('Nombre d\'images pour le carrousel', 'theme_4w4'),
+        'section' => 'hero_section',
+        'type' => 'number',
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 10, // Tu peux changer la limite max
+        ),
+      ));
 
-//////////////////////////////// ajout de la donné ADRESSE
-$wp_customize->add_setting('footer_adresse', array(
-  'default' => __('Monrtréal', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field'
-));
+      // ========== Ajout dynamique des images ==========
+      $nombre_images = get_theme_mod('hero_nombre_images', 3); // Utiliser la valeur enregistrée ou 3 par défaut
 
-//////////////////////////////// ajout du controle de la donnée ADRESSE
-$wp_customize->add_control('footer_adresse', array(
-  'label' => __('Adresse', 'theme_4w4'),
-  'section' => 'footer_section',
-  'type' => 'text',
-));
+      for ($k = 0; $k < $nombre_images; $k++) {
+        $wp_customize->add_setting('hero_background_' . $k, array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
 
-//////////////////////////////// ajout de la donné  DE TÉLÉPHONENUMÉRO
-$wp_customize->add_setting('footer_telephone', array(
-  'default' => __('(514) 254-7131', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field'
-));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_' . $k, array(
+            'label' => __('Image en arrière-plan ' . ($k + 1), 'theme_4w4'),
+            'section' => 'hero_section',
+        )));
+      }
+            
+      // Début de la zone footer
+      // Création d'un nouvelle section dans le customizer
+      $wp_customize->add_section('footer_section', array(
+        'title' => __('Section Footer', 'theme_4w4'),
+        'priority' => 30,
+      ));
+      ///////////////// ajout de la donnée
+      $wp_customize->add_setting('footer_adresse', array(
+        'default' => __('5800 Sherbrooke-est Montréal (Québec) H1X 2A2', 'theme_4w4'),
+        'sanitize_callback' => 'sanitize_text_field'
+      ));
+      
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control('footer_adresse', array(
+        'label' => __('Adresse', 'theme_4w4'),
+        'section' => 'footer_section',
+        'type' => 'text',
+      ));
+      ///////////////// ajout de la donnée
+      $wp_customize->add_setting('footer_telephone', array(
+        'default' => __('(514) 254-7131', 'theme_4w4'),
+        'sanitize_callback' => 'sanitize_text_field'
+      ));
+      
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control('footer_telephone', array(
+        'label' => __('Téléphone', 'theme_4w4'),
+        'section' => 'footer_section',
+        'type' => 'text',
+      ));
+      
+      ///////////////// ajout de la donnée
+      $wp_customize->add_setting('footer_mission', array(
+        'default' => __('Notre mission consiste de...', 'theme_4w4'),
+        'sanitize_callback' => 'sanitize_text_field'
+      ));
+      
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control('footer_mission', array(
+        'label' => __('Mission', 'theme_4w4'),
+        'section' => 'footer_section',
+        'type' => 'text',
+      ));
 
-//////////////////////////////// ajout du controle de la donnée NUMÉRO DE TÉLÉPHONE
-$wp_customize->add_control('footer_telephone', array(
-  'label' => __('Téléphone', 'theme_4w4'),
-  'section' => 'footer_section',
-  'type' => 'text',
-));
-//////////////////////////////// ajout de la donné COURRIEL
-$wp_customize->add_setting('footer_courriel', array(
-  'default' => __('Courriel', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field'
-));
+      /////////////////Début du champ couleur
+      //////////////// ajout de la donnée couleur 
+      $wp_customize->add_setting('footer_couleur', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ));
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_couleur', array(
+        'label' => __('Sélectionner une couleur', 'theme_4w4'),
+        'section' => 'footer_section',
+      )));
 
-//////////////////////////////// ajout du controle de la donnée COURRIEL
-$wp_customize->add_control('footer_courriel', array(
-  'label' => __('Courriel', 'theme_4w4'),
-  'section' => 'footer_section',
-  'type' => 'text',
-));
+      /////////////// Page erreur 404
+        $wp_customize->add_section('page_404', array(
+          'title'    => 'Page 404',
+          'priority' => 30,
+      ));
 
-//////////////////////////////// ajout de la donné MISSION
-$wp_customize->add_setting('footer_mission', array(
-  'default' => __('Mission', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field'
-));
+      // ///////////////// ajout de la donnée
+      $wp_customize->add_setting('page_404_titre', array(
+          'default' => __('Oups ! Cette page est introuvable.', 'theme_4w4'),
+          'sanitize_callback' => 'sanitize_text_field',
+      ));
 
-//////////////////////////////// ajout du controle de la donnée MISSION
-$wp_customize->add_control('footer_mission', array(
-  'label' => __('Mission', 'theme_4w4'),
-  'section' => 'footer_section',
-  'type' => 'text',
-));
-//////////////////// ajout image en background FOOOTEERRRRRR
-$wp_customize->add_setting('footer_background', array(
-'default' => '',
-'sanitize_callback' => 'esc_url_raw',
-));
+      // ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control('page_404_titre', array(
+          'label' => __('Titre d’erreur', 'theme_4w4'),
+          'section'  => 'page_404',
+          'type'     => 'text',
+      ));
 
-$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_background', array(
-'label' => __('footer Background Image', 'theme_4w4'),
-'section' => 'footer_section',
-)));
+      $wp_customize->add_setting('page_404_message', array(
+          'default' => __('Il semble que le lien que vous avez suivi n`existe pas.', 'theme_4w4'),
+          'sanitize_callback' => 'sanitize_text_field',
+      ));
 
-// /////////////////////////////////////// pour le EREUR 404 ///////////////////////////////////////////
-$wp_customize->add_section('404_section', array(
-  'title' => __('Section 404', 'theme_4w4'),
-  'priority' => 30,
-));
-//////////////////////////////// ajout titre description 404
-$wp_customize->add_setting('Titre_404', array(
-  'default' => __('', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field'
-));
+      // ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control('page_404_message', array(
+          'label' => __('Message d’erreur', 'theme_4w4'),
+          'section'  => 'page_404',
+          'type'     => 'text',
+      ));
 
-//////////////////////////////// ajout de la donné du titre description 404
-$wp_customize->add_control('Titre_404', array(
-  'label' => __('Titre', 'theme_4w4'),
-  'section' => '404_section',
-  'type' => 'text',
-));
+      $wp_customize->add_setting('page_404_suggestions', array(
+          'default' => __('Voici quelques suggestions.', 'theme_4w4'),
+          'sanitize_callback' => 'sanitize_text_field',
+      ));
 
-//////////////////////////////// ajout text description 404
-$wp_customize->add_setting('Texte_404', array(
-  'default' => __('', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field'
-));
+      // ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control('page_404_suggestions', array(
+          'label' => __('Suggestion d’erreur', 'theme_4w4'),
+          'section'  => 'page_404',
+          'type'     => 'text',
+      ));
 
-//////////////////////////////// ajout de la donné du text description 404
-$wp_customize->add_control('Texte_404', array(
-  'label' => __('Desciption', 'theme_4w4'),
-  'section' => '404_section',
-  'type' => 'text',
-));
+      $wp_customize->add_setting('background_404', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ));
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'background_404', array(
+        'label' => __('Image en arrière plan', 'theme_4w4'),
+        'section' => 'page_404',
+      )));
 
-//////////////////////////////// ajout text du bouton 404
-$wp_customize->add_setting('Bouton_404', array(
-  'default' => __('', 'theme_4w4'),
-  'sanitize_callback' => 'sanitize_text_field'
-));
+      /////////////// Page erreur 404 Intra
+      $wp_customize->add_section('section_404', array(
+        'title'    => 'Page 404 Intra',
+        'priority' => 30,
+    ));
 
-//////////////////////////////// ajout de la donné du text du bouton 404
-$wp_customize->add_control('Bouton_404', array(
-  'label' => __('Bouton', 'theme_4w4'),
-  'section' => '404_section',
-  'type' => 'text',
-));
+    // ///////////////// ajout de la donnée
+    $wp_customize->add_setting('page_404_titre_intra', array(
+        'default' => __('Oops, vous avez échoué sur lile 404', 'theme_4w4'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
 
-//////////////////// ajout image en background 404
-$wp_customize->add_setting('erreur_404_background', array(
-  'default' => '',
-  'sanitize_callback' => 'esc_url_raw',
-));
-//////////////////// ajout image en background 404
-$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_404_background', array(
-  'label' => __('Erreur 404 Background Image', 'theme_4w4'),
-  'section' => '404_section',
-)));
-}
+    // ///////////////// ajout du contrôle de la donnée
+    $wp_customize->add_control('page_404_titre_intra', array(
+        'label' => __('Titre d’erreur', 'theme_4w4'),
+        'section'  => 'section_404',
+        'type'     => 'text',
+    ));
 
-add_action('customize_register', 'theme_4w4_customize_register');
+    $wp_customize->add_setting('page_404_message_intra', array(
+        'default' => __('Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur Accueil pour découvrir à nouveau nos voyages d’exception !', 'theme_4w4'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
 
+    // ///////////////// ajout du contrôle de la donnée
+    $wp_customize->add_control('page_404_message_intra', array(
+        'label' => __('Message d’erreur', 'theme_4w4'),
+        'section'  => 'section_404',
+        'type'     => 'text',
+    ));
+
+    /////////////////Début du champ couleur
+      //////////////// ajout de la donnée couleur 
+      $wp_customize->add_setting('couleur_404', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+      ));
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'couleur_404', array(
+        'label' => __('Sélectionner une couleur', 'theme_4w4'),
+        'section' => 'section_404',
+      )));
+    
+    // Background 404 intra
+    $wp_customize->add_setting('background_404_intra', array(
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
+    ));
+    ///////////////// ajout du contrôle de la donnée
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'background_404_intra', array(
+      'label' => __('Image en arrière plan', 'theme_4w4'),
+      'section' => 'section_404',
+    )));
+      
+      }
+      
+      add_action('customize_register', 'theme_4w4_customize_register');
 ?>

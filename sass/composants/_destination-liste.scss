@@ -1,0 +1,88 @@
+
+/* Animation fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.destination{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    &__item{
+        width: 300px; 
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .destination__item:hover {
+        transform: translateY(-5px); /* Slight lift effect */
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    }
+     
+
+    &__title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 100%; 
+    }
+
+    &__titre {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0;
+        flex-grow: 1; 
+        padding: 1rem;
+    }
+
+    &__toggle-button {
+        font-size: 1.5em;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #007bff;
+        font-weight: bold;
+        padding: 0;
+    }
+
+    &__texte {
+        margin-top: 10px;
+        font-size: 1em;
+        color: #333;
+        line-height: 1.5;
+        display: none; 
+        animation: fadeIn 0.5s ease-in-out; /* Ajout de l'animation fade-in */
+ 
+    }
+
+    &__item a {
+        font-size: 0.9em;
+        color: #007bff;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+    &__toggle-button:focus {
+        outline: none;
+    }
+}

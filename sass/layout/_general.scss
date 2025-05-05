@@ -1,10 +1,21 @@
 .global{
-    // max-width: 1100px;
-    padding: 6vh 5vw;
+    max-width: 1100px;
+    padding: 10vh 5vw;
     
 }
 
-.populaire .global {
+.categorie__titre {
+    margin-left: 20px;
+      
+}
+  
+.categorie__description {
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+.populaire .global{
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
 }

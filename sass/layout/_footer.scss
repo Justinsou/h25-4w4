@@ -1,97 +1,52 @@
 /*
-  --------------------------------- Layout du pied de page
+----------------Layout du pied de page 
 */
-
 footer{
-  background-color: rgb(236, 136, 13);
-  color : #000;
+    // background-color: rgb(236,136,13);
+    color: black;
+    
 
-  ul{
-    li {
-        a {
-            list-style: none;
-            text-decoration: none;
-            color: black;
-        }
-    } 
-}
 }
 
 .piedpage{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__s1{
     display: flex;
-    flex-direction: column;
-
+    flex-wrap: wrap;
+    padding: 20px;
     
-    &__s1{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 3rem;
-
-      
-        &__externe {
-            nav {
-                display: flex;
-                align-items: center;
-            }
-            flex : 0 0 20%;
-            & .menu { //ul
-                display : flex;
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        &__adresse{
-            flex : 0 0 35%;
-            padding-bottom: 1rem;
-
-            &__padding{
-                padding-top: 1rem;
-            }
-
-            &__coord{}
-            &__recherche{}
-            
-        }
-        &__mission{
-            flex:0 0 30%;
-        }
-    }
-    &__s2{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        padding-top: 1rem;
-
-        &__icone{
-            align-self: center;
-        }
-    }
-
-    @media screen and (max-width: 800px) {
-        padding-top: 2vh;
-        
-        &__s1 {
-            gap: 1rem;
-
-            &__mission_texte {
-                align-items: center;
+    &__externe{
+        flex: 1 0 20%;
+        & .menu{ //ul
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            }
-        }
-        &__s1, &__s1__adresse, &__s1__mission {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        &__s2 {
-            align-items: center;
-            flex-direction: column-reverse;
-            gap: 1rem;
         }
     }
+    &__adresse{
+        flex: 1 0 40%;
+        &__coord{
+            padding: 20px;
+        }
+        &__recherche{
+            padding: 20px;
+        }
+    }
+    &__description{
+        flex: 1 0 400px;
+    }
+
+    &__mission{
+        flex: 1 0 30%;
+    }
+  }
+
+  &__s2{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+  }
 
 }

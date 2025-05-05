@@ -1,41 +1,90 @@
-
-.carte{
-    display : flex;
+.carte {
+    display: flex;
     flex-direction: column;
+    text-align: center;
     justify-content: space-between;
-   &--grande{
-    flex: 1 1 30%;
-   } 
-   &__image{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-    img{
-        width : 100%;
+    &--grande {
+      flex: 1 1 250px;
+      margin: 20px;
     }
-   }
-   &__contenu{
-       background-color: aliceblue; 
-   }
-   &__titre{
-    
-   }
-   &__description{}
-   &__bouton{
-    &--actif{}
-   }
-
-   &  .post-category {
-    
-   }
-
-    ul{
-        li {
-            a {
-                list-style: none;
-                text-decoration: dotted;
-                color: black;
-            }
-        } 
+  
+    &__image {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  
+    &__contenu {
+      padding: 20px;
+      background-color: aliceblue;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      text-align: center; 
     }
 
+    &__titre {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 0 10px;
+      padding-top: 10px;
+      color: #333;
+      
+      &__lien {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s ease;
+    
+        &:hover {
+          color: #007bff;
+        }
+      }
+    }
 
+    &__description {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #777;
+    }
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+ .post-categories{
+  display: flex;
+  list-style-type:none ;
+  justify-content: center;
+  gap:10px;
+  padding: 0;
+  li{
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 15px;
+    background-color: #007bff;
+    text-align: center;
+
+    &:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+  }
+
+  a{
+    color: white;
+    text-decoration: none;
+  }
 }

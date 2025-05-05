@@ -1,73 +1,50 @@
 .hero {
-    // background-image: url("images/maldives.jpg");
-    background-repeat: no-repeat;
+    position: relative;
     min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    &__carrousel {
+    &__caroussel {
         position: absolute;
         min-height: 100vh;
         width: 100%;
-        background-size: cover;
         background-position: center;
-        z-index: -1;
-        display: none; // Par défaut, toutes les images sont masquées
-        &.active {
-            display: block; // Affiche uniquement l'image active
-        }
+        background-size: cover;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .hero__caroussel.active {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    &__contenu {
+        position: relative;
+        z-index: 3; 
     }
 
     &__radio {
-        display: flex;
-        justify-content: center;
         position: absolute;
-        bottom: 1rem;
         width: 100%;
-        z-index: 1;
-        gap: 1rem;
-        padding: 0.5rem;
-        border-radius: 1.5rem;
-
-        .hero__radio__input {
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border: 2px solid #fff;
-            border-radius: 50%;
-            background-color: transparent;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-
-            &:checked {
-                background-color: #fff;
-                transform: scale(1.2);
-            }
-        }
-    }
-
-    &__icone {
-        padding-top: 1rem;
-        display: flex;
-        gap: 0.5rem;
-
-        img {
-            width: 25px;
-            height: 25px;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
-
-    @media screen and (max-width: 524px) {
-        padding-top: 1.5rem;
+        bottom: 0;
         display: flex;
         justify-content: center;
-        align-items: center;
+        gap: 2rem;
+        top: 90vh;
+        z-index: 4; 
+    }
 
-        &__radio {
-            bottom: 0.5rem;
-        }
+    &__button {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 15px;
+        border: 1px solid rgb(255, 0, 0);
+        border-radius: 5px;
+        background-color: rgb(255, 0, 0);
     }
 }
