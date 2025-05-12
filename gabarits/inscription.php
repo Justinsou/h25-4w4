@@ -20,7 +20,7 @@
             <label for="telephone">Téléphone</label>
             <input type="text" placeholder="Écrivez votre téléphone" id="telephone" name="telephone">
         </div>
-        <div class="inscription__info">
+        <div class="inscription__info inscription__info__boutton">
             <input  class="inscription__boutton" type="submit" value="S'inscrire">
         </div>
 </form>

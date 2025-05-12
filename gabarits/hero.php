@@ -46,7 +46,7 @@ for ($k = 0; $k < $hero_nombre_images; $k++) {
 
         <p class="hero__courriel"><?php bloginfo('admin_email'); ?></p>
         <p class="hero__adresse">5800 Sherbrooke-est Montréal (Québec) H1X 2A2</p>
-        <p class="hero__telephone">(514) 254-7131</p>
+        <p class="hero__telephone">1 800 847-2525</p>
         <p class="hero__auteur">Auteur: <?php echo esc_html($hero_auteur); ?></p>
         <button class="hero__button">S'inscrire</button>
         <div class="hero__icone">

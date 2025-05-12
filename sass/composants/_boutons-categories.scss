@@ -3,23 +3,26 @@
 */
 .categorie__ul{
     display: flex;
-    gap: 5px;
     list-style-type: none;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
     cursor: pointer;
+    padding-bottom: 2rem;
 
     &__li{
-        border: 1px solid #aaa;
+        border: 1px solid black;
         background-color: #007bff;
         border-radius: 4px;
         padding: 15px;
         color: white;
         text-align: center;
 
+
         &:hover{
         background-color: #0056b3;
         transform: translateY(-2px);
         }
-
     }
 }
 

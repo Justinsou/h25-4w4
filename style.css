@@ -197,12 +197,15 @@ Les composants
 */
 .categorie__ul {
   display: flex;
-  gap: 5px;
   list-style-type: none;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
   cursor: pointer;
+  padding-bottom: 2rem;
 }
 .categorie__ul__li {
-  border: 1px solid #aaa;
+  border: 1px solid black;
   background-color: #007bff;
   border-radius: 4px;
   padding: 15px;
@@ -238,16 +241,23 @@ Les composants
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 1rem;
 }
 .destination__item {
-  width: 300px;
   background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 20px;
+  border: 1px solid #007bff;
+  padding: 1%;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 800px) {
+  .destination__item {
+    width: 300px;
+    flex-direction: row;
+    padding: 20px;
+  }
 }
 .destination .destination__item:hover {
   transform: translateY(-5px); /* Slight lift effect */
@@ -257,11 +267,10 @@ Les composants
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
   width: 100%;
 }
 .destination__titre {
-  font-size: 1.2em;
+  padding-top: 2rem;
   font-weight: bold;
   margin: 0;
   flex-grow: 1;
@@ -275,9 +284,11 @@ Les composants
   color: #007bff;
   font-weight: bold;
   padding: 0;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-right: 5px;
 }
 .destination__texte {
-  margin-top: 10px;
   font-size: 1em;
   color: #333;
   line-height: 1.5;
@@ -288,7 +299,7 @@ Les composants
   font-size: 0.9em;
   color: #007bff;
   text-decoration: none;
-  margin-top: 10px;
+  margin: 10px;
 }
 .destination__toggle-button:focus {
   outline: none;
@@ -472,22 +483,24 @@ Les layouts
   gap: 2rem;
   top: 90vh;
   z-index: 4;
+  padding-bottom: 2rem;
 }
 .hero__button {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 15px;
-  border: 1px solid rgb(255, 0, 0);
+  color: white;
+  border: 1px solid black;
   border-radius: 5px;
-  background-color: rgb(255, 0, 0);
+  background-color: #007bff;
 }
 
 .inscription {
-  width: fit-content;
+  width: 80%;
+  padding: 20px 30px;
   background: white;
-  padding: 15px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -495,11 +508,18 @@ Les layouts
   margin: -2rem auto 0 auto;
   z-index: 6;
 }
+@media screen and (max-width: 800px) {
+  .inscription {
+    width: fit-content;
+  }
+}
 .inscription__form {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 @media screen and (max-width: 800px) {
   .inscription__form {
@@ -509,15 +529,38 @@ Les layouts
 .inscription__info {
   display: flex;
   flex-direction: column;
+  padding-bottom: 0;
+}
+@media screen and (max-width: 800px) {
+  .inscription__info {
+    padding-bottom: 0.8rem;
+  }
+}
+.inscription__info__boutton {
+  padding-top: 20px;
+}
+@media screen and (max-width: 800px) {
+  .inscription__info__boutton {
+    padding-top: 0;
+  }
+}
+.inscription__boutton {
+  color: white;
+  background-color: #007bff;
 }
 .inscription label {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
 }
+@media screen and (max-width: 800px) {
+  .inscription label {
+    margin-bottom: 0px;
+  }
+}
 .inscription input {
   padding: 8px;
-  border: 1px solid #00bcd4;
+  border: 1px solid black;
   border-radius: 3px;
   width: 160px;
   outline: none;
