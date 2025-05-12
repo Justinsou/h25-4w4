@@ -1,3 +1,20 @@
+.chk__menu {
+  display: none;
+}
+.chk__menu:checked ~ .entete__nav {
+  display: flex;
+  flex-direction: column;
+  .entete__menu {
+    flex-direction: column;
+  }
+}
+
+.chk__menu:checked ~ .entete__navigation {
+  display: flex !important; // Forcer l'affichage
+  flex-direction: column;
+  transform: translateX(0); // Assurez-vous que le menu est visible
+}
+
 .entete{
     display: flex;
     justify-content: space-between;
@@ -84,4 +101,19 @@
         transform: translateX(0);
     }
     
+}
+
+.entete__navigation {
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.005, 1);
+  @media screen and (max-width: 800px) {
+    transform: translateX(-200%);
+  }
+}
+
+.entete__burger {
+  display: block; // Visible par défaut
+
+  @media screen and (min-width: 801px) {
+    display: none; // Masquer en mode desktop
+  }
 }

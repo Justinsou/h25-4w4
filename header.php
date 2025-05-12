@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href=""> 
     <title>Club de voyage</title>
     <!-- <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css"> -->
@@ -29,23 +30,21 @@
         }
         ?>
         </a>
-            <input type="checkbox" id="maCheckbox" aria-label="menu-burger">
-            <label for="maCheckbox">
-                <div class="trait"></div>
-                <div class="trait"></div>
-                <div class="trait"></div>
-            </label>
+             <label for="chk__menu" class="entete__burger">
+          <img
+            src="https://s2.svgbox.net/hero-outline.svg?ic=menu&color=000"
+            width="32"
+            height="32"
+          />
+        </label>
+        <input type="checkbox" class="chk__menu" id="chk__menu" />
             <div class="entete__navigation">
                 <?php wp_nav_menu(array(
                     "menu" => "principal",
                     'container' => 'nav',
                     'container_class' => 'entete__menu'
                 )); ?>
-                <?php  get_search_form() ?>
-                <!-- <form class="recherche">
-                    <input type="search" placeholder="Rechercher" class="recherche__input">
-                    <img class="recherche__img"  src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="16" height="16">
-                </form> -->
+                <?php get_search_form(); ?>
             </div>
         </div>
     </header>

@@ -322,6 +322,24 @@ Les layouts
   margin: 0 auto;
 }
 
+.chk__menu {
+  display: none;
+}
+
+.chk__menu:checked ~ .entete__nav {
+  display: flex;
+  flex-direction: column;
+}
+.chk__menu:checked ~ .entete__nav .entete__menu {
+  flex-direction: column;
+}
+
+.chk__menu:checked ~ .entete__navigation {
+  display: flex !important;
+  flex-direction: column;
+  transform: translateX(0);
+}
+
 .entete {
   display: flex;
   justify-content: space-between;
@@ -400,6 +418,24 @@ Les layouts
     transform: translateX(0);
   }
 }
+.entete__navigation {
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.005, 1);
+}
+@media screen and (max-width: 800px) {
+  .entete__navigation {
+    transform: translateX(-200%);
+  }
+}
+
+.entete__burger {
+  display: block;
+}
+@media screen and (min-width: 801px) {
+  .entete__burger {
+    display: none;
+  }
+}
+
 .hero {
   position: relative;
   min-height: 100vh;
