@@ -48,8 +48,11 @@
     }
 
     .custom-logo {
-        max-width: 250px;
+        max-width: 75px;
+        max-height: 75px;
         height: auto;
+        width: auto;
+        display: block;
         }
 }
 

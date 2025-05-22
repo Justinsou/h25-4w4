@@ -4,12 +4,17 @@
 */
 ?>
 
-<article class="carte carte--grande">
+<?php
+  // Récupérer l'URL de l'image mise en avant (taille 'large' ou 'full')
+  $image_url = '';
+  if (has_post_thumbnail()) {
+    $image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+  }
+?>
+
+<article class="carte carte--grande" style="background-image: url('<?php echo esc_url($image_url); ?>'); background-size: cover; background-position: center;">
   <div class="carte__contenu">
-    <?php
-      if (has_post_thumbnail()) {
-        the_post_thumbnail('thumbnail'); }  
-    ?>
+    <!-- On retire the_post_thumbnail() ici -->
     <h4 class="carte__titre">
       <a href="<?php the_permalink() ?>" class="carte__titre__lien">
         <?php the_title(); ?>
@@ -23,13 +28,19 @@
       if (is_category() && $categorie_actuelle) {
         echo '<ul class="post-categories">';
         foreach ($categories as $categorie) {
-          if ($categorie->slug != $categorie_actuelle->slug) {
+          if ($categorie->slug != $categorie_actuelle->slug && $categorie->slug != 'populaire') {
             echo '<li><a href="' . get_category_link($categorie->term_id) . '">' . $categorie->name . '</a></li>';
           }
         }
         echo '</ul>';
       } else {
-        the_category();
+        echo '<ul class="post-categories">';
+        foreach ($categories as $categorie) {
+          if ($categorie->slug != 'populaire') {
+            echo '<li><a href="' . get_category_link($categorie->term_id) . '">' . $categorie->name . '</a></li>';
+          }
+        }
+        echo '</ul>';
       }
     ?>
     <p>Température maximum : <?php the_field('temperature_maximum'); ?> C</p>

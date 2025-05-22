@@ -51,13 +51,31 @@ function afficher_icones_sociaux() {
     ];
     echo '<div class="icones-sociaux">';
     foreach ($socials as $key => $label) {
-        $url = get_theme_mod("theme_social_{$key}_url");
-        $icon = get_theme_mod("theme_social_{$key}_icon");
+        $url = get_theme_mod("theme_social_{$key}_url", '');
+        $icon = get_theme_mod("theme_social_{$key}_icon", '');
         if ($url && $icon) {
-            echo '<a href="' . esc_url($url) . '" target="_blank" rel="noopener" aria-label="' . esc_attr($label) . '">';
-            echo '<img src="' . esc_url($icon) . '" alt="' . esc_attr($label) . '" style="width:32px;height:32px;">';
-            echo '</a> ';
+            echo '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">';
+            echo '<img src="' . esc_url($icon) . '" alt="' . esc_attr($label) . '" class="icone-sociaux__img">';
+            echo '</a>';
         }
     }
     echo '</div>';
+}
+
+function categorie_par_destination($cat_a_retirer) {
+    $cat_obj = get_category_by_slug($cat_a_retirer);
+    $cat_id = $cat_obj ? $cat_obj->term_id : 0;
+
+    $args = array(
+        'exclude' => $cat_id,
+        'hide_empty' => false,
+    );
+    $categories = get_categories($args);
+    if ($categories) {
+        echo '<div class="liste-categories">';
+        foreach ($categories as $category) {
+            echo '<a class="btn-categorie" href="' . get_category_link($category->term_id) . '">' . esc_html($category->name) . '</a>';
+        }
+        echo '</div>';
+    }
 }

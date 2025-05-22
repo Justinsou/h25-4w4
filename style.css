@@ -125,6 +125,11 @@ Les composants
 .carte--grande {
   flex: 1 1 250px;
   margin: 20px;
+  color: #fff;
+  position: relative;
+  min-height: 320px;
+  border-radius: 1em;
+  overflow: hidden;
 }
 .carte__image img {
   width: 100%;
@@ -138,6 +143,11 @@ Les composants
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4); /* Optionnel : fond semi-transparent pour le texte */
+  padding: 2em;
+  border-radius: 1em;
 }
 .carte__titre {
   font-size: 1.5rem;
@@ -251,6 +261,7 @@ Les composants
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 @media screen and (min-width: 800px) {
   .destination__item {
@@ -303,6 +314,22 @@ Les composants
 }
 .destination__toggle-button:focus {
   outline: none;
+}
+.destination__item {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+.destination__item.fade-out {
+  opacity: 0;
+}
+.destination__item.fade-in {
+  opacity: 0;
+  animation: fadeInDestination 1s forwards;
+}
+@keyframes fadeInDestination {
+  to {
+    opacity: 1;
+  }
 }
 
 .vague {
@@ -383,8 +410,11 @@ Les layouts
   width: 20vw;
 }
 .entete .custom-logo {
-  max-width: 250px;
+  max-width: 75px;
+  max-height: 75px;
   height: auto;
+  width: auto;
+  display: block;
 }
 
 /*Rendre invisible le checkbox */
@@ -751,4 +781,16 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.icones-sociaux img,
+.icone-socios__img {
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  object-fit: contain;
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: middle;
 }/*# sourceMappingURL=style.css.map */

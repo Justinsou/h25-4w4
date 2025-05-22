@@ -4,14 +4,22 @@
 */
 
 // Récupérer les données
-$hero_auteur = get_theme_mod('hero_auteur', 'Default Title'); 
+$hero_auteur = get_theme_mod('hero_auteur', 'Justin Soulard'); 
+$hero_courriel = get_theme_mod('hero_courriel', 'e6239575@cmaisonneuve.qc.ca'); 
 $hero_couleur = get_theme_mod('hero_couleur', '');
-$hero_nombre_images = get_theme_mod('hero_nombre_images', 3);
+
+// Nombre d'images dans le carrousel
+$hero_nombre_images = get_theme_mod('hero_nombre_images', 3); // Valeur par défaut à 3
 
 // Charger toutes les images du carrousel
 $hero_background = array();
 for ($k = 0; $k < $hero_nombre_images; $k++) {
     $hero_background[$k] = get_theme_mod('hero_background_' . $k, '');
+}
+
+$hero_couleurs = array();
+for ($k = 0; $k < $hero_nombre_images; $k++) {
+    $hero_couleurs[$k] = get_theme_mod('hero_couleur_slide_' . $k, '');
 }
 ?>
 
@@ -31,26 +39,33 @@ for ($k = 0; $k < $hero_nombre_images; $k++) {
     </div>
 
     <div class="hero__contenu global">
-        <div class="hero__animation hero__animation--active">
-            <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
-            <p class="hero__description"><?php bloginfo('description'); ?></p>
-        </div>
-        <div class="hero__animation">
-            <h1 class="hero__titre">lorem</h1>
-            <p class="hero__description">lorem ?></p>
-        </div>
-        <div class="hero__animation">
-            <h1 class="hero__titre"><?php bloginfo('name'); ?></h1>
-            <p class="hero__description"><?php bloginfo('description'); ?></p>
-        </div>
+        <?php foreach ($hero_background as $index => $background_url) : ?>
+            <div class="hero__animation<?php echo ($index === 0) ? ' hero__animation--active' : ''; ?>" 
+                 data-animation-index="<?php echo $index; ?>">
+                <?php if($index == 0): ?>
+                    <h1 class="hero__titre">BIO AILES</h1>
+                    <p class="hero__description">Un pas vers le bio dans les AIRS !</p>
+                <?php elseif($index == 1): ?>
+                    <h1 class="hero__titre">Aventure & Nature</h1>
+                    <p class="hero__description">Explorez des destinations sauvages.</p>
+                <?php elseif($index == 2): ?>
+                    <h1 class="hero__titre">Culture & Détente</h1>
+                    <p class="hero__description">Immergez-vous dans la culture locale.</p>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
 
-        <p class="hero__courriel"><?php bloginfo('admin_email'); ?></p>
+        <p class="hero__courriel"><?php echo esc_html($hero_courriel); ?></p>
         <p class="hero__adresse">5800 Sherbrooke-est Montréal (Québec) H1X 2A2</p>
         <p class="hero__telephone">1 800 847-2525</p>
         <p class="hero__auteur">Auteur: <?php echo esc_html($hero_auteur); ?></p>
         <button class="hero__button">S'inscrire</button>
         <div class="hero__icone">
-            <?php get_template_part('gabarits/icones'); ?>
+            <?php   afficher_icones_sociaux(); ?>
         </div>
     </div>
 </section>
+
+<script>
+window.heroCouleurs = <?php echo json_encode($hero_couleurs); ?>;
+</script>

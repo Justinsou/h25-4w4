@@ -20,6 +20,18 @@
         'section' => 'hero_section',
         'type' => 'text',
       ));
+      ///////////////// ajout de la donnée
+      $wp_customize->add_setting('hero_courriel', array(
+        'default' => __('e6239575@cmaisonneuve.qc.ca', 'theme_4w4'),
+        'sanitize_callback' => 'sanitize_email'
+      ));
+
+      ///////////////// ajout du contrôle de la donnée
+      $wp_customize->add_control('hero_courriel', array(
+        'label' => __('Courriel', 'theme_4w4'),
+        'section' => 'hero_section',
+        'type' => 'email',
+      ));
       // Nombre d'images dans le carrousel
       // $wp_customize->add_setting('hero_nombre_images', array(
       //   'default' => 3,
@@ -89,6 +101,16 @@
 
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_' . $k, array(
             'label' => __('Image en arrière-plan ' . ($k + 1), 'theme_4w4'),
+            'section' => 'hero_section',
+        )));
+
+        // Couleur personnalisée pour chaque slide
+        $wp_customize->add_setting('hero_couleur_slide_' . $k, array(
+            'default' => '',
+            'sanitize_callback' => 'sanitize_hex_color',
+        ));
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_couleur_slide_' . $k, array(
+            'label' => __('Couleur du texte pour le slide ' . ($k + 1), 'theme_4w4'),
             'section' => 'hero_section',
         )));
       }

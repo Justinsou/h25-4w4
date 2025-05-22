@@ -10,6 +10,11 @@
     &--grande {
       flex: 1 1 250px;
       margin: 20px;
+      color: #fff;
+      position: relative;
+      min-height: 320px;
+      border-radius: 1em;
+      overflow: hidden;
     }
   
     &__image {
@@ -27,6 +32,11 @@
       flex-direction: column;
       align-items: center; 
       text-align: center; 
+      position: relative;
+      z-index: 2;
+      background: rgba(0,0,0,0.4); /* Optionnel : fond semi-transparent pour le texte */
+      padding: 2em;
+      border-radius: 1em;
     }
 
     &__titre {

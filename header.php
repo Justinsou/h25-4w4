@@ -26,7 +26,7 @@
         echo wp_get_attachment_image($logo_id, 'logo', false, array(
             'class' => 'custom-logo',
             'alt' => get_bloginfo('name'),
-            ));
+        ));
         }
         ?>
         </a>

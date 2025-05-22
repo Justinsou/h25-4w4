@@ -9,7 +9,10 @@
     let indexActuel = 0;
     const total = hero__radio__input.length;
 
+    if (hero__radio__input.length === 0) return; // Stoppe le script si aucun input
+
     function changementAutomatique(index){
+        if (!hero__radio__input[index]) return;
         hero__radio__input[index].checked = true;
 
         // Supprime "active" de toutes les caroussels
@@ -24,12 +27,20 @@
     }
 
     function changementAnimation(index){
+        if (!hero__radio__input[index]) return;
         hero__radio__input[index].checked = true;
 
-        // Supprime "active" de toutes les caroussels
-        hero__animation.forEach(c => c.classList.remove("hero__animation--active"));
+        hero__animation.forEach((c, i) => {
+            c.classList.remove("hero__animation--active");
+            c.style.backgroundColor = "";
+            c.style.color = "";
+        });
         if (hero__animation[index]) {
             hero__animation[index].classList.add("hero__animation--active");
+            // Applique la couleur personnalisée si définie
+            if (window.heroCouleurs && window.heroCouleurs[index]) {
+                hero__animation[index].style.color = window.heroCouleurs[index];
+            }
         }
     }
 

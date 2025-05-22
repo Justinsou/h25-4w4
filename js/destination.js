@@ -1,35 +1,52 @@
 (function() {
     console.log("destination.js");
     const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
-    const domaine = window.location.href;
-    const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+    const domaine = window.location.origin + window.location.pathname.replace(/\/$/, ''); // base propre
+    const apiUrl = `${domaine}/wp-json/wp/v2/posts?categories=${categoryId}`;
     console.log(apiUrl);
  
     function parcourir_bouton() {
         const categorie__ul__li = document.querySelectorAll(".categorie__ul__li");
+        let activeCategorieId = null;
+
         categorie__ul__li.forEach(elm => {
             elm.addEventListener('mousedown', (e) => {
-                // Empêche l'événement de propagation si nécessaire
                 e.preventDefault();
-                
+
+                const categorieId = e.target.dataset.category_id;
+
+                // Si on clique sur la catégorie déjà active
+                if (activeCategorieId === categorieId) {
+                    const items = document.querySelectorAll('.destination__item');
+                    items.forEach(item => {
+                        item.classList.add('fade-out');
+                    });
+                    // Après la transition, on retire les éléments du DOM
+                    setTimeout(() => {
+                        document.querySelector('.destination__list').innerHTML = '';
+                        categorie__ul__li.forEach(button => {
+                            button.classList.remove('active');
+                        });
+                        activeCategorieId = null;
+                    }, 400); // 400ms = durée de la transition CSS
+                    return;
+                }
+
+                // Sinon, comportement normal
                 categorie__ul__li.forEach(button => {
                     button.classList.remove('active');
                 });
 
                 e.target.classList.add('active');
-                
-                // Logique de filtrage selon la catégorie ou une action spécifique
-                const categorieId = e.target.dataset.category_id;
-                console.log(`Catégorie cliquée: ${categorieId}`);
-               
-                // Pour l'exemple, je recharge la liste des articles selon la catégorie
+                activeCategorieId = categorieId;
+
                 fetchArticles(categorieId);
             });
         });
     }
  
     function fetchArticles(categoryId) {
-        const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+        const apiUrl = `${domaine}/wp-json/wp/v2/posts?categories=${categoryId}`;
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
@@ -38,7 +55,7 @@
  
                 data.forEach(article => {
                     const articleElement = document.createElement('div');
-                    articleElement.classList.add('destination__item');
+                    articleElement.classList.add('destination__item', 'fade-in'); // Ajoute fade-in
 
                     // Crée le titre clickable
                     const titleWrapper = document.createElement('div');
@@ -72,6 +89,11 @@
                     articleElement.appendChild(link);
                     destinationList.appendChild(articleElement);
 
+                    // Retire la classe fade-in après l'animation pour permettre le fade-out plus tard
+                    setTimeout(() => {
+                        articleElement.classList.remove('fade-in');
+                    }, 400);
+                    
                     toggleButton.addEventListener('click', () => {
                         const isVisible = paragraph.style.display === 'block';
                         if (isVisible) {

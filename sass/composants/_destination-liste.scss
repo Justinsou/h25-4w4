@@ -1,4 +1,3 @@
-
 /* Animation fade-in */
 @keyframes fadeIn {
     0% {
@@ -31,6 +30,7 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         display: flex;
            flex-direction: column;
+               flex-wrap: wrap;
      
 
         @media screen and (min-width: 800px){
@@ -95,5 +95,25 @@
 
     &__toggle-button:focus {
         outline: none;
+    }
+
+    &__item {
+        opacity: 1;
+        transition: opacity 0.4s;
+    }
+
+    &__item.fade-out {
+        opacity: 0;
+    }
+
+    &__item.fade-in {
+        opacity: 0;
+        animation: fadeInDestination 1s forwards;
+    }
+
+    @keyframes fadeInDestination {
+        to {
+            opacity: 1;
+        }
     }
 }
