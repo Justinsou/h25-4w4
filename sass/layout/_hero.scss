@@ -25,7 +25,9 @@
 
     &__contenu {
         position: relative;
-        z-index: 3; 
+        z-index: 3;
+        min-height: 200px; // Ajuste selon ton design
+        overflow: hidden;
     }
 
     &__radio {

@@ -10,7 +10,7 @@
       ));
       ///////////////// ajout de la donnée
       $wp_customize->add_setting('hero_auteur', array(
-        'default' => __('Erik Perez', 'theme_4w4'),
+        'default' => __('Justin Soulard', 'theme_4w4'),
         'sanitize_callback' => 'sanitize_text_field'
       ));
       
@@ -255,8 +255,39 @@
       'label' => __('Image en arrière plan', 'theme_4w4'),
       'section' => 'section_404',
     )));
-      
-      }
-      
-      add_action('customize_register', 'theme_4w4_customize_register');
+
+    $wp_customize->add_section('theme_social_section', array(
+        'title' => 'Icônes sociales',
+        'priority' => 30,
+    ));
+
+    $socials = [
+        'facebook' => 'Facebook',
+        'twitter' => 'Twitter',
+        'instagram' => 'Instagram',
+        'github' => 'Github'
+    ];
+
+    foreach ($socials as $key => $label) {
+        $wp_customize->add_setting("theme_social_{$key}_url", [
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw'
+        ]);
+        $wp_customize->add_setting("theme_social_{$key}_icon", [
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw'
+        ]);
+        $wp_customize->add_control("theme_social_{$key}_url", [
+            'label' => "Lien $label",
+            'section' => 'theme_social_section',
+            'type' => 'url'
+        ]);
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "theme_social_{$key}_icon", [
+            'label' => "Icône $label",
+            'section' => 'theme_social_section',
+            'settings' => "theme_social_{$key}_icon"
+        ]));
+    }
+}
+add_action('customize_register', 'theme_4w4_customize_register');
 ?>

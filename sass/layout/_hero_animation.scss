@@ -2,50 +2,41 @@
 ¸ Anmation de la section hero
 
 */
-.hero__animation{
-  display : none;
-  &--active{
+.hero__animation {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.6s;
+  pointer-events: none;
+
+  &--active {
     display: block;
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+
     .hero__titre, .hero__description {
-      position: relative;
-      animation: contenu cubic-bezier(.66,-1.01,.36,1.2) 1s forwards;
+      animation: heroFadeInUp 0.8s cubic-bezier(.66,-1.01,.36,1.2) both;
+    }
+    .hero__titre {
+      animation-delay: 0.1s;
+    }
+    .hero__description {
+      animation-delay: 0.3s;
     }
   }
 }
 
-
-
-  
-  .hero__titre {
-    transform: translateY(-1000px);
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
   }
-  
-  .hero__description {
-    transform: translateX(-1000px);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @keyframes contenu {
-    100% {
-      transform: translate(0, 0);
-      animation-delay: 1s;
-    }
-  }
-  
-  // // Nouvelle animation "Slide Up" simplifiée
-  // .hero__animation--slide-up {
-  //   transform: translateY(100vh); /* Départ en bas */
-  //   opacity: 0;
-  //   animation: slideUp 1s ease forwards;
-  // }
-  
-  // @keyframes slideUp {
-  //   0% {
-  //     transform: translateY(100vh); /* Départ en bas */
-  //     opacity: 0;
-  //   }
-  //   100% {
-  //     transform: translateY(0); /* Arrivée en haut */
-  //     opacity: 1; /* Devient visible */
-  //   }
-  // }
-  
+}

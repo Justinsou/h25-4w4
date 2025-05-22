@@ -28,8 +28,6 @@
 
         // Supprime "active" de toutes les caroussels
         hero__animation.forEach(c => c.classList.remove("hero__animation--active"));
-
-        // Ajoute "active" au carrousel correspondant
         if (hero__animation[index]) {
             hero__animation[index].classList.add("hero__animation--active");
         }

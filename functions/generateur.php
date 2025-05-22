@@ -1,4 +1,3 @@
-
 <?php   
 /**
  * Génére une liste de sous-catégories
@@ -42,3 +41,23 @@ function genere_vague($couleur){ ?>
         </path>
     </svg>
 <?php }
+
+function afficher_icones_sociaux() {
+    $socials = [
+        'facebook' => 'Facebook',
+        'twitter' => 'Twitter',
+        'instagram' => 'Instagram',
+        'github' => 'Github'
+    ];
+    echo '<div class="icones-sociaux">';
+    foreach ($socials as $key => $label) {
+        $url = get_theme_mod("theme_social_{$key}_url");
+        $icon = get_theme_mod("theme_social_{$key}_icon");
+        if ($url && $icon) {
+            echo '<a href="' . esc_url($url) . '" target="_blank" rel="noopener" aria-label="' . esc_attr($label) . '">';
+            echo '<img src="' . esc_url($icon) . '" alt="' . esc_attr($label) . '" style="width:32px;height:32px;">';
+            echo '</a> ';
+        }
+    }
+    echo '</div>';
+}

@@ -36,7 +36,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1rem, 2.3vw, 2rem);
+  font-size: clamp(1rem, 1.2vw, 1.8rem);
 }
 
 h4 {
@@ -473,6 +473,8 @@ Les layouts
 .hero__contenu {
   position: relative;
   z-index: 3;
+  min-height: 200px;
+  overflow: hidden;
 }
 .hero__radio {
   position: absolute;
@@ -496,7 +498,7 @@ Les layouts
 }
 
 .inscription {
-  width: 80%;
+  width: 68%;
   padding: 20px 30px;
   background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -716,26 +718,37 @@ footer {
 */
 .hero__animation {
   display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.6s;
+  pointer-events: none;
 }
 .hero__animation--active {
   display: block;
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
 }
 .hero__animation--active .hero__titre, .hero__animation--active .hero__description {
-  position: relative;
-  animation: contenu cubic-bezier(0.66, -1.01, 0.36, 1.2) 1s forwards;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.66, -1.01, 0.36, 1.2) both;
+}
+.hero__animation--active .hero__titre {
+  animation-delay: 0.1s;
+}
+.hero__animation--active .hero__description {
+  animation-delay: 0.3s;
 }
 
-.hero__titre {
-  transform: translateY(-1000px);
-}
-
-.hero__description {
-  transform: translateX(-1000px);
-}
-
-@keyframes contenu {
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
   100% {
-    transform: translate(0, 0);
-    animation-delay: 1s;
+    opacity: 1;
+    transform: translateY(0);
   }
 }/*# sourceMappingURL=style.css.map */

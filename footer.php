@@ -39,7 +39,7 @@
     </section>
     <section class="piedpage__s2">
       <div class="piedpage__s2__icone">
-        <?php  get_template_part('gabarits/icones'); ?>
+        <?php   afficher_icones_sociaux(); ?>
       </div>
       <?php wp_nav_menu(array(
                     "menu" => "principal",
