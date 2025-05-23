@@ -843,4 +843,37 @@ h1 {
 
 .pays-emplacement {
   padding: 24px;
+}
+
+.pays-galerie {
+  margin: 2em auto;
+  max-width: 900px;
+}
+.pays-galerie__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+.pays-galerie__item {
+  flex: 1 1 180px;
+  max-width: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pays-galerie img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+.pays-galerie__item:hover img {
+  transform: scale(1.04);
 }/*# sourceMappingURL=style.css.map */

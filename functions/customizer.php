@@ -337,6 +337,37 @@
         'label' => __('Couleur de fond de l\'emplacement pays', 'theme_4w4'),
         'section' => 'pays_section',
     )));
+
+    // Nombre d'images dans la galerie
+    $wp_customize->add_setting('pays_section_nombre_images', array(
+        'default' => 3,
+        'sanitize_callback' => 'absint',
+    ));
+    $wp_customize->add_control('pays_section_nombre_images', array(
+        'label' => __('Nombre d\'images dans la galerie', 'theme_4w4'),
+        'section' => 'pays_section',
+        'type' => 'number',
+        'input_attrs' => array(
+            'min' => 1,
+            'max' => 10,
+        ),
+    ));
+
+    // Génère les champs images selon le nombre choisi
+    $nb_images = get_theme_mod('pays_section_nombre_images', 3);
+    if (!$nb_images || $nb_images < 1) $nb_images = 3; // sécurité
+
+    for ($i = 1; $i <= $nb_images; $i++) {
+        $wp_customize->add_setting("pays_section_image_$i", array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "pays_section_image_$i", array(
+            'label' => __("Image $i de la galerie", 'theme_4w4'),
+            'section' => 'pays_section',
+            'settings' => "pays_section_image_$i",
+        )));
+    }
 }
 add_action('customize_register', 'theme_4w4_customize_register');
 ?>
