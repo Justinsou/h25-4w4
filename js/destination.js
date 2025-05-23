@@ -1,7 +1,7 @@
 (function() {
     console.log("destination.js");
     const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
-    const domaine = window.location.origin + window.location.pathname.replace(/\/$/, ''); // base propre
+    const domaine = window.location.origin + '/4w4';
     const apiUrl = `${domaine}/wp-json/wp/v2/posts?categories=${categoryId}`;
     console.log(apiUrl);
  
@@ -117,4 +117,95 @@
  
     // Activer les événements de clic sur les boutons ou liens de catégories
     parcourir_bouton();
+
+    // === AJOUT POUR LE MENU PAYS ET LA RECHERCHE ===
+
+    // Tableau des pays
+    const paysList = [
+        "France", "États-Unis", "Canada", "Argentine", "Chili",
+        "Belgique", "Maroc", "Mexique", "Japon", "Italie",
+        "Islande", "Chine", "Grèce", "Suisse"
+    ];
+
+    // Génère le menu des pays si l'élément existe
+    const menuPays = document.querySelector('.menu-pays');
+    if (menuPays) {
+        paysList.forEach(pays => {
+            const btn = document.createElement('button');
+            btn.className = 'btn-pays';
+            btn.textContent = pays;
+            btn.dataset.pays = pays;
+            menuPays.appendChild(btn);
+        });
+
+        // Gestion du clic sur un bouton pays
+        document.querySelectorAll('.btn-pays').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const pays = this.dataset.pays;
+                fetchDestinationsByPays(pays);
+            });
+        });
+    }
+
+    // Fonction pour charger les destinations par nom de pays (search)
+    function fetchDestinationsByPays(pays) {
+        const apiUrl = `${domaine}/wp-json/wp/v2/posts?search=${encodeURIComponent(pays)}`;
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('destinations');
+                if (!container) return;
+                container.innerHTML = '';
+                data.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add('destination__item', 'fade-in');
+
+                    const titleWrapper = document.createElement('div');
+                    titleWrapper.classList.add('destination__title-wrapper');
+
+                    const title = document.createElement('h3');
+                    title.textContent = article.title.rendered;
+                    title.classList.add('destination__titre');
+
+                    const toggleButton = document.createElement('button');
+                    toggleButton.textContent = '...';
+                    toggleButton.classList.add('destination__toggle-button');
+
+                    const paragraph = document.createElement('div');
+                    paragraph.classList.add('destination__texte');
+                    paragraph.innerHTML = article.excerpt.rendered;
+                    paragraph.style.display = 'none';
+
+                    const link = document.createElement('a');
+                    link.href = article.link;
+                    link.textContent = 'Lire plus';
+                    link.style.display = 'none';
+
+                    titleWrapper.appendChild(title);
+                    titleWrapper.appendChild(toggleButton);
+                    articleElement.appendChild(titleWrapper);
+                    articleElement.appendChild(paragraph);
+                    articleElement.appendChild(link);
+                    container.appendChild(articleElement);
+
+                    setTimeout(() => {
+                        articleElement.classList.remove('fade-in');
+                    }, 400);
+
+                    toggleButton.addEventListener('click', () => {
+                        const isVisible = paragraph.style.display === 'block';
+                        paragraph.style.display = isVisible ? 'none' : 'block';
+                        link.style.display = isVisible ? 'none' : 'inline';
+                    });
+                });
+            })
+            .catch(error => console.error('Erreur lors de la récupération des destinations:', error));
+    }
+
+    // Charger la France par défaut dans #destinations si présent
+    document.addEventListener('DOMContentLoaded', function() {
+        if (document.getElementById('destinations')) {
+            fetchDestinationsByPays('France');
+        }
+    });
 })();

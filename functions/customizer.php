@@ -170,7 +170,7 @@
         'label' => __('Sélectionner une couleur', 'theme_4w4'),
         'section' => 'footer_section',
       )));
-
+      
       /////////////// Page erreur 404
         $wp_customize->add_section('page_404', array(
           'title'    => 'Page 404',
@@ -310,6 +310,33 @@
             'settings' => "theme_social_{$key}_icon"
         ]));
     }
+
+    // Ajoute une section pour la page pays
+    $wp_customize->add_section('pays_section', array(
+        'title' => __('Section Pays', 'theme_4w4'),
+        'priority' => 31,
+    ));
+
+
+    // Couleur de fond pour .pages-pays
+    $wp_customize->add_setting('pays_background_color', array(
+        'default' => '#f4f4f4',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'pays_background_color', array(
+        'label' => __('Couleur de fond de la page pays', 'theme_4w4'),
+        'section' => 'pays_section',
+    )));
+
+    // Couleur de fond pour .pays-emplacement
+    $wp_customize->add_setting('pays_emplacement_background_color', array(
+        'default' => '#fff',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'pays_emplacement_background_color', array(
+        'label' => __('Couleur de fond de l\'emplacement pays', 'theme_4w4'),
+        'section' => 'pays_section',
+    )));
 }
 add_action('customize_register', 'theme_4w4_customize_register');
 ?>

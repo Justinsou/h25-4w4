@@ -1,56 +1,52 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+.pages-pays {
+  // background: #f4f4f4; // Sera surchargé par le style inline
+  p {
+    padding: 2em;
 }
-
-.site-main {
-    padding: 20px;
-}
-
-.contenu-pays {
-    margin-bottom: 40px;
 }
 
 h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
+  color: #222;
+  padding: 2em;
+  margin-bottom: 24px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
 }
 
-.galerie {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
+.contenu-pays {
+    height: 100%;
 }
-
-.galerie img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .menu-pays {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+//   margin-bottom: 32px;
 }
 
-.menu-pays button {
-    background-color: #0073aa;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.menu-pays button,
+.btn-pays {
+  background: #0073aa;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.menu-pays button:hover,
+.btn-pays:hover,
+.menu-pays button.active,
+.btn-pays.active {
+  background: #005177;
+  transform: translateY(-2px) scale(1.04);
 }
 
-.menu-pays button:hover {
-    background-color: #005177;
+.pays-emplacement {
+  // background: #fff; // Sera surchargé par le style inline
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 24px;
 }
