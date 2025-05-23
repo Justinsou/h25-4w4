@@ -1,7 +1,7 @@
 (function() {
     console.log("destination.js");
     const categoryId = 3; // Remplacez par l'ID de la catégorie souhaitée
-    const domaine = window.location.origin + '/4w4';
+    const domaine = window.location.origin + '/4w4_10';
     const apiUrl = `${domaine}/wp-json/wp/v2/posts?categories=${categoryId}`;
     console.log(apiUrl);
  
